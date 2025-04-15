@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>Exercise Guide</title>
+    <style>
+       body {
+    position: relative; 
+    background: linear-gradient(to bottom right, rgba(60, 85, 126, 0.8), rgba(0, 0, 0, 0.7));
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.navbar {
+    width: 100%;
+    background-color: #3c547e;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0; 
+    padding: 30px; 
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    border-radius: 50%;
+    margin-right: 20px;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+
+.card h1 {
+    font-size: 22px;
+    margin: 0;
+    color: #3c547e;
+}
+
+.card p {
+    margin: 5px 0;
+    color: #555;
+}
+
+a {
+    color: #ff4081;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #e91e63;
+}
+
+@media (max-width: 600px) {
+    .card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .card img {
+        margin-bottom: 15px;
+        width: 100px;
+        height: 100px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="navbar">Exercise Guide</div>
+
+    <div class="container">
+        <div class="card">
+            <img src="https://media.istockphoto.com/vectors/step-of-doing-the-mountain-climber-exercise-by-healthy-woman-vector-id957699448?k=20&m=957699448&s=612x612&w=0&h=kxdGeANir4ASYaCyuXkeHkoL-VZTPQ9eOIRKjuhuCWc=" alt="Mountain Climber">
+            <div>
+                <h1>1. Mountain Climber</h1>
+                <p>Repeat 3 times</p>
+                <p>50 counts per set</p>
+                <a href="https://youtu.be/kLh-uczlPLg?si=hAB77N1xWm8jrK9W">Tutorial</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://media.istockphoto.com/id/1135331615/vector/exercise-guide-by-woman-doing-air-squat-in-2-steps-in-side-view-for-strengthens-entire-lower.jpg?s=612x612&w=0&k=20&c=IkcJfYojhqUNv-q1uxD4d7oQGUB3gAczs4qeZbd00xo=" alt="Squats">
+            <div>
+                <h1>2. Squats</h1>
+                <p>Repeat 3 times</p>
+                <p>30 counts per set</p>
+                <a href="https://youtu.be/xqvCmoLULNY?si=NiutgCTRFgB03vH_">Tutorial</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://as1.ftcdn.net/jpg/02/79/81/68/220_F_279816813_uFZeSSKJCTolvIReeuVA3ltXNNGBVvOF.jpg" alt="Jumping Jacks">
+            <div>
+                <h1>3. Jumping Jacks</h1>
+                <p>Repeat 3 times</p>
+                <p>50 counts per set</p>
+                <a href="https://youtu.be/gKyCtTb_Y3E?si=01xdw_CyDb83nXeP">Tutorial</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://media.istockphoto.com/id/957699402/vector/woman-doing-abdominal-workout-with-bicycle-crunch-for-exercise-guide.jpg?s=612x612&w=0&k=20&c=lY-2nGOHjMbrxBuoS3Jxvi2FEgkkmOc9IwVGunk6zvs=" alt="Bicycle Crunches">
+            <div>
+                <h1>4. Bicycle Crunches</h1>
+                <p>Repeat 3 times</p>
+                <p>50 counts per set</p>
+                <a href="https://youtu.be/wnuLak2onoA?si=5CeBbD0IJj7MDJH5">Tutorial</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://media.istockphoto.com/id/964785648/vector/illustrated-exercise-guide-by-healthy-woman-doing-lunges-workout-in-2-steps.jpg?s=612x612&w=0&k=20&c=aiyOizs_x3B3fI07LVuQ6thVMpRl_oAtbzJurVM56Jw=" alt="Lunges">
+            <div>
+                <h1>5. Lunges</h1>
+                <p>Repeat 3 times</p>
+                <p>25 counts per set</p>
+                <a href="https://youtu.be/MxfTNXSFiYI?si=qbvQy5vXAVokkgoW">Tutorial</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://www.performancehealth.com/media/wysiwyg/blog/articles/shutterstock_1095541985.jpg" alt="Glute Bridge">
+            <div>
+                <h1>6. Glute Bridge</h1>
+                <p>Repeat 3 times</p>
+                <p>20 counts per set</p>
+                <a href="https://youtu.be/tqp5XQPpTxY?si=GgNmFXz05_46rOKO">Tutorial</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTieUBU3D9hyzm5muHuATf81LkhRCSfBF1ZFlXhbITIUiPk5bs0ZFYPxP3P8ExawfmQ1c&usqp=CAU" alt="Plank">
+            <div>
+                <h1>7. Plank</h1>
+                <p>Repeat 3 times</p>
+                <p>Stay still for 1 min straight.</p>
+                <a href="https://www.youtube.com/watch?v=pvIjsG5Svck&pp=ygUecGxhbmt3b3Jrb3V0IHR1dG9yaWFsIHB1cmUgZ3lt">Tutorial</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://t4.ftcdn.net/jpg/02/55/19/97/360_F_255199728_NSWOS8SQxD8S32UhiJHnm5UvOJcVtA86.jpg" alt="Flutter Kicks">
+            <div>
+                <h1>8. Flutter Kicks</h1>
+                <p>Repeat 3 times</p>
+                <p>30 counts per set</p>
+                <a href="https://www.youtube.com/watch?v=K5wuM_gNWyw&pp=ygUeZmx1dHRlciBraWNrc3R1dG9yaWFsIHB1cmUgZ3lt">Tutorial</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://t3.ftcdn.net/jpg/03/67/60/32/360_F_367603208_29Ycsr2zZMI9JkikpZ2hCd3GxXbSql4j.jpg" alt="Crunches">
+            <div>
+                <h1>9. Crunches</h1>
+                <p>Repeat 3 times</p>
+                <p>30 counts per set</p>
+                <a href="https://www.youtube.com/watch?v=0t4t3IpiEao&pp=ygUaY3J1bmNoZXMgdHV0b3JpYWwgcHVyZSBneW0%3D">Tutorial</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://media.istockphoto.com/id/1131508527/vector/exercise-guide-by-woman-doing-squat-jump-in-3-steps-in-side-view.jpg?s=170x170&k=20&c=_CC8udYUvhPqZvlA6MFpOTlQmSY6oQTXtdNS6GZfCmI=" alt="Squat Jumps">
+            <div>
+                <h1>10. Squat Jumps</h1>
+                <p>Repeat 3 times</p>
+                <p>40 counts per set</p>
+                <a href="https://www.youtube.com/watch?v=BRfxI2Es2lE&pp=ygUdc3F1YXQganVtcHMgdHV0b3JpYWwgcHVyZSBneW0%3D">Tutorial</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
