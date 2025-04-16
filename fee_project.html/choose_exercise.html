@@ -6,7 +6,6 @@
     <title>Healthy Recipes</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-    
     <style>
         body {
             background-image: url("https://img.freepik.com/premium-photo/flat-photo-sports-equipment-dumbbells-table-tennis-rackets-measuring-tape-trainers-water-bottle-fruit-protein-bars-sports-training-background_102209-258.jpg");
@@ -17,19 +16,19 @@
             font-family: 'Poppins', sans-serif;
             color: white;
         }
-    
+
         .container {
             display: flex;
             justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
+            align-items: flex-start;  /* Align items to the start of the container */
+            flex-direction: column;   /* Stack the items vertically */
             padding: 40px 20px;
             gap: 30px;
             min-height: 100vh;
             background-color: rgba(0, 0, 0, 0.6);
             padding-top: 10px; /* Adjust to reduce space at the top */
         }
-    
+
         .category {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -41,124 +40,164 @@
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
-    
+
         .category:hover {
             transform: translateY(-8px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
         }
-    
+
         .category-image {
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
-    
+
         .category-info {
             padding: 20px;
         }
-    
+
         h3 {
             margin: 15px 0 10px;
             font-size: 20px;
             color: #ffcc00;
         }
-    
+
         p {
             margin: 5px 0;
             font-size: 14px;
             line-height: 1.5;
         }
-    
+
         a {
             color: #ffcc00;
             text-decoration: none;
             font-weight: bold;
         }
-    
+
         a:hover {
             text-decoration: underline;
         }
+
         @keyframes glow {
-    0% {
-        box-shadow: 0 0 5px rgba(0, 255, 255, 0.3), 0 0 10px rgba(0, 255, 255, 0.3);
-    }
-    50% {
-        box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.5);
-    }
-    100% {
-        box-shadow: 0 0 5px rgba(0, 255, 255, 0.3), 0 0 10px rgba(0, 255, 255, 0.3);
-    }
+            0% {
+                box-shadow: 0 0 5px rgba(0, 255, 255, 0.3), 0 0 10px rgba(0, 255, 255, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 5px rgba(0, 255, 255, 0.3), 0 0 10px rgba(0, 255, 255, 0.3);
+            }
+        }
 
-}
-.category:hover {
-    animation: glow 2s infinite alternate;
-    transform: translateY(-5px);
-}
-
-
-
+        .category:hover {
+            animation: glow 2s infinite alternate;
+            transform: translateY(-5px);
+        }
 
         @media (max-width: 600px) {
             .category {
                 width: 100%;
             }
-    
+
             .container {
                 padding: 20px 10px;
             }
         }
-       
+
         h2 {
-    width: 100%;
-    text-align: center;
-    color: #fff;
-    margin: 0; /* Remove all margin */
-    padding-bottom: 0px; /* Optional: Adjust this if needed */
-}
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            margin: 0; /* Remove all margin */
+            padding-bottom: 0px; /* Optional: Adjust this if needed */
+        }
+
+        .welcome-box {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: -20px;
+            color: #fff;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .welcome-heading {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #ffcc00, #ff9900);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .quote-day {
+            font-size: 16px;
+            font-weight: 300;
+            color: #eee;
+            margin-bottom: 15px;
+        }
+
+        .quote-box {
+            margin: 0 auto 30px;
+            max-width: 600px;
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            border-radius: 10px;
+            font-size: 16px;
+            font-style: italic;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
     </style>
-   <!-- ferfrfer  -->
 </head>
 <body>
-    
     <div class="container">
-        <h2 style="text-align: center; color: #fff; margin: 20px 0 5px;">
-            Hey <span id="userName">User</span>, explore exercises that fit your goals 💪
-        </h2>
-        
-        <div class="category" >
+        <div class="welcome-box">
+            <h2 class="welcome-heading">Welcome back, <span id="userName">User</span>.</h2>
+            <p class="quote-day">How are you? Here's your motivational quote for today</p>
+
+            <div class="quote-box" id="dailyQuote">
+                Loading your quote...
+            </div>
+        </div>
+    
+        <div class="category">
             <img src="https://www.shutterstock.com/image-photo/smoldering-look-attractive-muscular-man-600nw-2036340593.jpg" alt="Image" class="category-image">
             <div class="category-info">
-                <h3><a href="workout_musclet.html">Muscle Strenghtening</a></h3>
-                <p >Muscle-strengthening exercises build strength, enhance endurance, and boost metabolism. They support overall fitness and help prevent injuries, making daily activities easier.
+                <h3><a href="workout_musclet.html">Muscle Strengthening</a></h3>
+                <p>Muscle-strengthening exercises build strength, enhance endurance, and boost metabolism. They support overall fitness and help prevent injuries, making daily activities easier.
                     <br><br>
                     "Strength training is not just about building muscle; it's about building resilience and confidence."
-                   
-
                 </p>
             </div>
         </div>
 
         <div class="category">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAmd-brRyvHcQxGs0jijQ5YQP9qLyfqNopYA&s" alt=" Image" class="category-image">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAmd-brRyvHcQxGs0jijQ5YQP9qLyfqNopYA&s" alt="Image" class="category-image">
             <div class="category-info">
                 <h3><a href="workout_yoga.html">Yoga</a></h3>
-                <p >Yoga enhances flexibility and strength while promoting relaxation and mindfulness. It's a holistic practice that supports both physical health and mental well-being.
-<br><br>
-"Yoga is the journey of the self, through the self, to the self." 
-<br>
-— The Bhagavad Gita
+                <p>Yoga enhances flexibility and strength while promoting relaxation and mindfulness. It's a holistic practice that supports both physical health and mental well-being.
+                    <br><br>
+                    "Yoga is the journey of the self, through the self, to the self."
+                    — The Bhagavad Gita
                 </p>
             </div>
         </div>
 
-        <div class="category" >
-            <img src="https://us.images.westend61.de/0001609163j/full-body-side-view-of-flexible-barefoot-female-practicing-bhujangasana-during-yoga-session-on-rooftop-against-flying-birds-ADSF30481.jpg" alt=" Image" class="category-image">
+        <div class="category">
+            <img src="https://us.images.westend61.de/0001609163j/full-body-side-view-of-flexible-barefoot-female-practicing-bhujangasana-during-yoga-session-on-rooftop-against-flying-birds-ADSF30481.jpg" alt="Image" class="category-image">
             <div class="category-info">
                 <h3><a href="workout_flexibility.html">Flexibility</a></h3>
-                <p >Flexibility exercises enhance joint range of motion and improve overall mobility. They help reduce the risk of injuries and promote better posture and balance.
+                <p>Flexibility exercises enhance joint range of motion and improve overall mobility. They help reduce the risk of injuries and promote better posture and balance.
                     <br><br>
-                    "Flexibility is the art of bending without breaking; it's strength in adaptability. Embrace it, and you'll find balance in every challenge." 
+                    "Flexibility is the art of bending without breaking; it's strength in adaptability. Embrace it, and you'll find balance in every challenge."
                 </p>
             </div>
         </div>
@@ -168,8 +207,29 @@
         if (userInfo) {
             document.getElementById('userName').textContent = userInfo.fname;
         }
+
+        const quotes = [
+            "Push yourself, because no one else is going to do it for you.",
+            "Success starts with self-discipline.",
+            "Train insane or remain the same.",
+            "The pain you feel today will be the strength you feel tomorrow.",
+            "Don’t wish for it. Work for it.",
+            "Your body can stand almost anything. It’s your mind you have to convince.",
+            "It’s not about having time. It’s about making time.",
+            "Work hard in silence. Let success make the noise.",
+            "Fitness is not about being better than someone else. It’s about being better than you used to be.",
+            "When you feel like quitting, think about why you started."
+        ];
+// hgftyrftyf
+        if (!localStorage.getItem('quoteStartDate')) {
+            localStorage.setItem('quoteStartDate', new Date().toISOString());
+        }
+
+        const startDate = new Date(localStorage.getItem('quoteStartDate'));
+        const today = new Date();
+        const dayDiff = Math.min(Math.floor((today - startDate) / (1000 * 60 * 60 * 24)), 9);
+
+        document.getElementById('dailyQuote').textContent = quotes[dayDiff];
     </script>
-    
-    
 </body>
 </html>
