@@ -63,12 +63,33 @@
       justify-content: center;
     }
 
-    .flip-card {
-      background-color: transparent;
-      width: 300px;
-      height: 350px;
-      perspective: 1000px;
-    }
+    .start-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #ffcc00, #ff9900);
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.start-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #ff9900, #ffcc00);
+  box-shadow: 0 4px 12px rgba(255, 153, 0, 0.4);
+}
+
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 400px; /* Increased height */
+  perspective: 1000px;
+}
+
 
     .flip-card-inner {
       position: relative;
@@ -120,9 +141,37 @@
     }
 
     .flip-card-back p {
-      font-size: 14px;
-      line-height: 1.5;
+      font-size: 16px;
+      line-height: 1.6;
     }
+    .streak-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#streakMessage {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffcc00;
+  margin-bottom: 15px;
+}
+
+#markWorkoutBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ffcc00;
+  border: none;
+  border-radius: 25px;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#markWorkoutBtn:hover {
+  transform: scale(1.05);
+  background-color: #ffaa00;
+}
+
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(-10px); }
@@ -154,9 +203,12 @@
             <h3>Muscle Strengthening</h3>
           </div>
           <div class="flip-card-back">
-            <p>Muscle-strengthening exercises build strength, enhance endurance, and boost metabolism. They support overall fitness and help prevent injuries, making daily activities easier.<br><br>
+            <p>Muscle-strengthening exercises build strength, enhance endurance, and boost metabolism. They support overall fitness and help prevent injuries, making daily activities easier.<br>
             "Strength training is not just about building muscle; it's about building resilience and confidence."</p>
-          </div>
+        <!-- Inside the back of the flip card -->
+<button class="start-btn">Start Now</button>
+ 
+        </div>
         </div>
       </div>
 
@@ -170,7 +222,10 @@
           <div class="flip-card-back">
             <p>Yoga enhances flexibility and strength while promoting relaxation and mindfulness. It's a holistic practice that supports both physical health and mental well-being.<br><br>
             "Yoga is the journey of the self, through the self, to the self." — The Bhagavad Gita</p>
-          </div>
+        <!-- Inside the back of the flip card -->
+<button class="start-btn">Start Now</button>
+  
+        </div>
         </div>
       </div>
 
@@ -184,11 +239,20 @@
           <div class="flip-card-back">
             <p>Flexibility exercises enhance joint range of motion and improve overall mobility. They help reduce the risk of injuries and promote better posture and balance.<br><br>
             "Flexibility is the art of bending without breaking; it's strength in adaptability."</p>
-          </div>
+        <!-- Inside the back of the flip card -->
+<button class="start-btn">Start Now</button>
+ 
+        </div>
         </div>
       </div>
     </div>
+    <div class="streak-container">
+        <p id="streakMessage">🔥 You’ve worked out 0 days in a row!</p>
+        <button id="markWorkoutBtn">Mark Workout Complete</button>
+      </div>
   </div>
+  
+  
 
   <script>
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
@@ -210,6 +274,74 @@
     ];
     const randomIndex = Math.floor(Math.random() * quotes.length);
 document.getElementById('dailyQuote').textContent = quotes[randomIndex];
+
+
+
+// Function to get the current streak count from localStorage
+function getStreakCount() {
+  let streak = localStorage.getItem('streakCount');
+  return streak ? parseInt(streak) : 0; // Default to 0 if no streak count is found
+}
+
+// Function to get the last workout date from localStorage
+function getLastWorkoutDate() {
+  return localStorage.getItem('lastWorkoutDate');
+}
+
+// Function to update the streak count and last workout date
+function updateStreakCount(count, date) {
+  localStorage.setItem('streakCount', count);
+  localStorage.setItem('lastWorkoutDate', date);
+  displayStreakMessage(count);
+}
+
+// Function to display the streak message
+function displayStreakMessage(count) {
+  const streakMessage = document.getElementById('streakMessage');
+  streakMessage.textContent = `🔥 You’ve worked out ${count} day${count === 1 ? '' : 's'} in a row!`;
+}
+
+// Function to mark a workout as completed
+function markWorkoutComplete() {
+  const currentDate = new Date().toISOString().split('T')[0]; // Get the current date in YYYY-MM-DD format
+  const lastWorkoutDate = getLastWorkoutDate();
+  let streak = getStreakCount();
+
+  if (!lastWorkoutDate) {
+    // If this is the first workout, start the streak
+    streak = 1;
+    updateStreakCount(streak, currentDate);
+  } else {
+    // Compare current date with last workout date
+    const lastDate = new Date(lastWorkoutDate);
+    const current = new Date(currentDate);
+    const timeDifference = current - lastDate;
+    const oneDay = 24 * 60 * 60 * 1000;
+
+    if (timeDifference === oneDay) {
+      // If the current date is exactly one day after the last workout, increment the streak
+      streak++;
+      updateStreakCount(streak, currentDate);
+    } else if (timeDifference > oneDay) {
+      // If it's more than a day gap, reset the streak
+      streak = 1;
+      updateStreakCount(streak, currentDate);
+    } else {
+      // If it's the same day, do nothing
+      alert("You already marked your workout for today!");
+    }
+  }
+}
+
+// When the "Mark Workout Complete" button is clicked
+document.getElementById('markWorkoutBtn').addEventListener('click', markWorkoutComplete);
+
+// Display the current streak on page load
+window.onload = function() {
+  const streak = getStreakCount();
+  displayStreakMessage(streak); // Display the streak message on page load
+};
+
 
      </script>
 </body>
