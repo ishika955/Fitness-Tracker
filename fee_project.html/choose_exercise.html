@@ -341,9 +341,21 @@ window.onload = function() {
   const streak = getStreakCount();
   displayStreakMessage(streak); // Display the streak message on page load
 };
+const startButtons = document.querySelectorAll('.start-btn');
+
+startButtons.forEach((button, index) => {
+  button.addEventListener('click', () => {
+    if (index === 0) {
+      window.location.href = 'workout_musclet.html';
+    } else if (index === 1) {
+      window.location.href = 'workout_yoga.html';
+    } else if (index === 2) {
+      window.location.href = 'workout_flexibility.html';
+    }
+  });
+});
 
 
      </script>
 </body>
 </html>
-<!-- hhjuhugit  -->
