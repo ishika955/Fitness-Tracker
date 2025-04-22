@@ -277,85 +277,59 @@ document.getElementById('dailyQuote').textContent = quotes[randomIndex];
 
 
 
-// Function to get the current streak count from localStorage
-function getStreakCount() {
-  let streak = localStorage.getItem('streakCount');
-  return streak ? parseInt(streak) : 0; // Default to 0 if no streak count is found
-}
-
-// Function to get the last workout date from localStorage
-function getLastWorkoutDate() {
-  return localStorage.getItem('lastWorkoutDate');
-}
-
-// Function to update the streak count and last workout date
-function updateStreakCount(count, date) {
-  localStorage.setItem('streakCount', count);
-  localStorage.setItem('lastWorkoutDate', date);
-  displayStreakMessage(count);
-}
-
-// Function to display the streak message
-function displayStreakMessage(count) {
-  const streakMessage = document.getElementById('streakMessage');
-  streakMessage.textContent = `🔥 You’ve worked out ${count} day${count === 1 ? '' : 's'} in a row!`;
-}
-
-// Function to mark a workout as completed
-function markWorkoutComplete() {
-  const currentDate = new Date().toISOString().split('T')[0]; // Get the current date in YYYY-MM-DD format
-  const lastWorkoutDate = getLastWorkoutDate();
-  let streak = getStreakCount();
-
-  if (!lastWorkoutDate) {
-    // If this is the first workout, start the streak
-    streak = 1;
-    updateStreakCount(streak, currentDate);
-  } else {
-    // Compare current date with last workout date
-    const lastDate = new Date(lastWorkoutDate);
-    const current = new Date(currentDate);
-    const timeDifference = current - lastDate;
-    const oneDay = 24 * 60 * 60 * 1000;
-
-    if (timeDifference === oneDay) {
-      // If the current date is exactly one day after the last workout, increment the streak
-      streak++;
-      updateStreakCount(streak, currentDate);
-    } else if (timeDifference > oneDay) {
-      // If it's more than a day gap, reset the streak
-      streak = 1;
-      updateStreakCount(streak, currentDate);
-    } else {
-      // If it's the same day, do nothing
-      alert("You already marked your workout for today!");
-    }
-  }
-}
-
-// When the "Mark Workout Complete" button is clicked
-document.getElementById('markWorkoutBtn').addEventListener('click', markWorkoutComplete);
-
-// Display the current streak on page load
-window.onload = function() {
-  const streak = getStreakCount();
-  displayStreakMessage(streak); // Display the streak message on page load
-};
-const startButtons = document.querySelectorAll('.start-btn');
-
-startButtons.forEach((button, index) => {
-  button.addEventListener('click', () => {
-    if (index === 0) {
-      window.location.href = 'workout_musclet.html';
-    } else if (index === 1) {
-      window.location.href = 'workout_yoga.html';
-    } else if (index === 2) {
-      window.location.href = 'workout_flexibility.html';
-    }
-  });
-});
-// fdff
-
      </script>
+
+<script>
+  // Utility to get last workout date from localStorage
+  function getLastWorkoutDate() {
+    return localStorage.getItem('lastWorkoutDate');
+  }
+
+  // Utility to get streak count from localStorage
+  function getStreakCount() {
+    return parseInt(localStorage.getItem('streakCount')) || 0;
+  }
+
+  // Function to update streak display
+  function updateStreakDisplay(streak) {
+    document.getElementById('streakMessage').textContent = `🔥 You’ve worked out ${streak} day${streak > 1 ? 's' : ''} in a row!`;
+  }
+
+  function markWorkoutComplete() {
+    const currentDate = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+    const lastWorkoutDate = getLastWorkoutDate();
+    let streak = getStreakCount();
+
+    if (lastWorkoutDate === currentDate) {
+      alert("You've already marked today's workout as complete!");
+      return;
+    }
+
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    const yesterdayStr = yesterday.toISOString().split('T')[0];
+
+    if (lastWorkoutDate === yesterdayStr) {
+      // Continued streak
+      streak++;
+    } else {
+      // Streak reset
+      streak = 1;
+    }
+
+    // Save updated data
+    localStorage.setItem('lastWorkoutDate', currentDate);
+    localStorage.setItem('streakCount', streak);
+
+    updateStreakDisplay(streak);
+  }
+
+  // Event listener for button click
+  document.getElementById('markWorkoutBtn').addEventListener('click', markWorkoutComplete);
+
+  // On page load: show current streak
+  updateStreakDisplay(getStreakCount());
+</script>
+
 </body>
 </html>
