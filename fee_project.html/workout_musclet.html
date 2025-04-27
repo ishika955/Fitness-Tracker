@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0">
     <title>Exercise Guide</title>
@@ -66,6 +67,11 @@ body::before {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+.card {
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
 .card img {
     border-radius: 50%;
     margin-right: 20px;
@@ -110,9 +116,74 @@ a:hover {
     }
 }
 
+#scrollTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    background-color: #3c547e;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#scrollTopBtn:hover {
+    background-color: #2e3e5c;
+    transform: scale(1.1);
+}
+.personal-touch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #d4af37, #f1c40f); /* Gold to yellow gradient for a shiny effect */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Soft, refined shadow for depth */
+    margin: 20px;
+    border: 3px solid #f39c12; /* Rich golden border with a refined look */
+    transition: all 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.personal-touch:hover {
+    background: linear-gradient(145deg, #f1c40f, #d4af37); /* Reverse the gradient on hover for shine effect */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25); /* Increase shadow on hover for a premium feel */
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 3px solid #f39c12; /* Gold border around the avatar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+}
+
+.intro h3 {
+    font-family: 'Georgia', serif;
+    font-size: 22px;
+    color: #fff; /* White text for contrast */
+    margin: 0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); /* Soft text shadow for a polished look */
+}
+
+
+
     </style>
+
 </head>
 <body>
+    <div class="navbar">Exercise Guide</div>
+    <div class="personal-touch">
+        <img src="https://i0.wp.com/youchooseyourway.com/wp-content/uploads/2022/11/WELCOME_-removebg-preview.png?fit=300%2C300&ssl=1" alt="Ishika's Avatar" class="avatar">
+        <div class="intro">
+            <h3>💬 Hi! I’m Ishika, your guide through this flexibility journey!</h3>
+        </div>
+    </div>
 
     <div class="navbar">Exercise Guide</div>
 
@@ -216,7 +287,25 @@ a:hover {
                 <a href="https://www.youtube.com/watch?v=BRfxI2Es2lE&pp=ygUdc3F1YXQganVtcHMgdHV0b3JpYWwgcHVyZSBneW0%3D">Tutorial</a>
             </div>
         </div>
-    </div>
+        <button id="scrollTopBtn" title="Go to top">↑</button>
 
+        
+    </div>
+    <script>
+        // Show button when user scrolls down 100px
+        window.onscroll = function() {
+            const btn = document.getElementById("scrollTopBtn");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+    
+        
+        document.getElementById("scrollTopBtn").onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
 </body>
 </html>
