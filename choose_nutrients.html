@@ -1,172 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Healthy Recipes</title>
-    
-    <style>
-        body {
-            background-image: url("https://images.squarespace-cdn.com/content/v1/57f1462015d5dbf1ae364486/1478095239581-DRBA199HPCGNJ76OZRHK/Screen+Shot+2016-10-24+at+15.05.26.png");
-            background-repeat: no-repeat;
-            background-size: cover;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: white; 
-            position: relative;
-            z-index: 0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Healthy Recipes</title>
+  <style>
+    body {
+      background-image: url("https://images.squarespace-cdn.com/content/v1/57f1462015d5dbf1ae364486/1478095239581-DRBA199HPCGNJ76OZRHK/Screen+Shot+2016-10-24+at+15.05.26.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      position: relative;
+      z-index: 0;
+    }
 
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.8); 
-            z-index: -1;
-        }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: -1;
+    }
 
-        .container {
-            display: flex;
-            justify-content: center; 
-            align-items: center; 
-            flex-wrap: wrap; 
-            padding: 20px;
-            gap: 20px; 
-            height: 100vh; 
-            width: 100vw;
-            box-sizing: border-box;
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 20px;
+      gap: 20px;
+      height: 100vh;
+      width: 100vw;
+      box-sizing: border-box;
+    }
 
-        }
+    .category {
+      background: rgba(0, 0, 0, 0.7);
+      width: 300px;
+      height: 300px;
+      perspective: 1000px;
+      border-radius: 20px;
+      overflow: hidden;
+    }
 
-        .category {
-            background: rgba(0, 0, 0, 0.7); 
-            width: 300px; 
-            height: 300px;
-            perspective: 1000px;
-            border-radius: 20px;
-            overflow: hidden;
-        }
+    .category-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+    }
 
-        .category-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transform-style: preserve-3d;
-            transition: transform 0.6s;
-        }
+    .category:hover .category-inner {
+      transform: rotateY(180deg);
+    }
 
-        .category:hover .category-inner {
-            transform: rotateY(180deg); 
-        }
+    .category-front,
+    .category-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 20px;
+    }
 
-        .category-front,
-        .category-back {
-             position: absolute;
-             width: 100%;
-             height: 100%;
-             backface-visibility: hidden;
-             border-radius: 20px;
-        }
+    .category-front {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .category-front{
-            display: flex;
-            justify-content: centre;
-            align-items: center;
-        }
+    .category-back {
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight:700;
+      transform: rotateY(180deg);
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
 
-        .category-back{
-            background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-weight:bold;
-            transform: rotateY(180deg);
-            text-align: center;
-            padding: 20px;
-            box-sizing: border-box;
-        }
+    .category-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures the image covers the container area */
+    }
 
-        .category-image {
-            width: 100%; 
-            height: 100%; 
-            object-fit:cover;
-        }
+    .category-info {
+      padding: 20px;
+    }
 
-        .category-info {
-            padding: 20px; 
-        }
+    .category-info p {
+      font-size: 16px;  /* Increased text size */
+      margin: 0 0 15px;
+      color: white;
+    }
 
-        .category-info p {
-            font-size: 16px;
-            margin: 0 0 15px;
-            color: white;
-        }
+    h3 {
+      margin: 15px 0 0;
+      font-size: 22px;  /* Increased title size */
+    }
 
-        h3 {
-            margin: 15px 0 0;
-            font-size: 22px; 
-        }
+    a {
+      color: #ffcc00;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;  /* Increased link size */
+    }
 
-        a {
-            color: #ffcc00;
-            text-decoration: none;
-            font-weight: bold; 
-            font-size: 18px;
-        }
+    a:hover {
+      text-decoration: underline;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
-
-        
-        @media (max-width: 600px) {
-            .category {
-                width: 90%; 
-                height: auto;
-            }
-        }
-    </style>
+    @media (max-width: 600px) {
+      .category {
+        width: 90%;
+        height: auto;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <!--Salads-->
-        <div class="category" id="salads">
-            <div class="category-inner">
-                <div class="category-front"></div>
-                <img src="https://www.foodandwine.com/thmb/bzp7zgHD9zI1gxPVpifxGQCjUBQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Salad-with-Crispy-Chickpeas-FT-RECIPE0520-2000-eca02ddb3d6c4ac39a5debe013330822.jpg" alt="Salads Image" class="category-image">
-            </div>
-            <div class="category-back">
-                <div class="category-info">
-                    <p>Wholesome, low-calorie salads packed with essential nutrients—perfect for fueling your body, supporting weight goals, and staying on track with your healthy lifestyle.</p>               
-                    <h3><a href="food.html">Salads</a></h3>
-                </div>
-                </div>
-            </div>
+  <div class="container">
+    <!-- Salads Section -->
+    <div class="category" id="salads">
+      <div class="category-inner">
+        <div class="category-front">
+          <img src="https://www.foodandwine.com/thmb/bzp7zgHD9zI1gxPVpifxGQCjUBQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Salad-with-Crispy-Chickpeas-FT-RECIPE0520-2000-eca02ddb3d6c4ac39a5debe013330822.jpg" alt="Salads Image" class="category-image">
         </div>
-
-            
-           
-        <div class="category" id="veg-food">
-            <img src="https://hurrythefoodup.com/wp-content/uploads/2020/09/Vegetarian-Indian-Recipes-title-image.jpg" alt="Veg Food Image" class="category-image">
-            <div class="category-info">
-                <h3><a href="food.html#v1">Veg Food</a></h3>
-                
-            </div>
+        <div class="category-back">
+          <div class="category-info">
+            <p>Wholesome, low-calorie salads packed with essential nutrients—perfect for fueling your body, supporting weight goals, and staying on track with your healthy lifestyle.</p>
+            <h3><a href="food.html">Salads</a></h3>
+          </div>
         </div>
-
-        <div class="category" id="meat-dishes">
-            <img src="https://media.istockphoto.com/id/960852864/photo/grilled-beefsteaks-and-vegetables.jpg?s=612x612&w=0&k=20&c=tU7aMOC9sSzcgzsxtGNcRNyX1sGPltdn0DwpqdcTrcI=" alt="Meat Dishes Image" class="category-image">
-            <div class="category-info">
-                <h3><a href="food.html#v2">Non-Veg Dishes</a></h3>
-                
-            </div>
-        </div>
+      </div>
     </div>
 
-    
+    <!-- Veg Food Section -->
+    <div class="category" id="veg-food">
+      <div class="category-inner">
+        <div class="category-front">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwGAUSG0G3O32yXQr2xYoXsDbIfSDtIuIOX-8fgrQcbZfZ0yIf6XU4VHBGyGKxv8c_WSQ&usqp=CAU" alt="Veg Food Image" class="category-image">
+        </div>
+        <div class="category-back">
+          <div class="category-info">
+            <p>Fresh, plant-based salads rich in fiber, vitamins, and essential nutrients—ideal for clean eating and supporting your fitness journey the vegetarian way.</p>
+            <h3><a href="food.html#v1">Veg Food</a></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Non-Veg Dishes Section -->
+    <div class="category" id="meat-dishes">
+      <div class="category-inner">
+        <div class="category-front">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoO1TcpsYjFRBgaIfggmiglbvLIZZnXjJeRQ&s" alt="Meat Dishes Image" class="category-image">
+        </div>
+        <div class="category-back">
+          <div class="category-info">
+            <p>Protein-rich, nutrient-packed non-vegetarian meals designed to fuel muscle growth, boost energy, and support an active lifestyle.</p>
+            <h3><a href="food.html#v2">Non-Veg Dishes</a></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
