@@ -4,112 +4,160 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Fitness App - Heart Rate Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background-color: #76bdc7;
-      background-image: url("https://img.freepik.com/premium-photo/3d-rendering-product-display-podium-pastel-background-with-sports-fitness-equipments_711568-8.jpg");
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url("https://img.freepik.com/premium-photo/3d-rendering-product-display-podium-pastel-background-with-sports-fitness-equipments_711568-8.jpg") no-repeat center center fixed;
       background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+      color: #222;
+      overflow-x: hidden;
     }
 
     h1 {
       text-align: center;
+      margin-top: 40px;
+      font-size: 36px;
       color: #4e3f9e;
-      margin-top: 30px;
-      font-size: 32px;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      animation: fadeInDown 1s ease;
     }
 
     .table-container {
-      background-color: rgba(255, 255, 255, 0.95);
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      max-width: 950px;
+      margin: 50px auto;
+      padding: 40px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+      animation: fadeInUp 1.5s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .table-container:hover {
+      transform: scale(1.01);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
+      margin-top: 10px;
     }
 
     th, td {
       text-align: center;
-      padding: 12px 10px;
+      padding: 14px 10px;
       font-size: 16px;
     }
 
     th {
-      background: linear-gradient(to right, #39a0d4, #2d83b3);
-      color: white;
-      border: none;
+      background: rgba(78, 63, 158, 0.85);
+      color: #fff;
+      border-radius: 10px 10px 0 0;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
     }
 
     td {
-      background-color: #f7fbfc;
-      border-bottom: 1px solid #ddd;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-bottom: 1px solid #ccc;
+      transition: background-color 0.3s;
     }
 
-    td input {
-      width: 70px;
-      padding: 5px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      text-align: center;
-      font-size: 15px;
+    tr:hover td {
+      background-color: rgba(255, 255, 255, 1);
     }
 
     td:first-child {
+      font-weight: 600;
       color: #333;
-      font-weight: bold;
-      background-color: #eaf6f9;
+    }
+
+    td input {
+      width: 80px;
+      padding: 8px;
+      border: 1px solid #aaa;
+      border-radius: 8px;
+      font-size: 15px;
+      text-align: center;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    td input:focus {
+      border-color: #4e3f9e;
+      box-shadow: 0 0 8px rgba(78, 63, 158, 0.4);
     }
 
     button {
       display: block;
-      margin: 30px auto 10px;
-      padding: 14px 40px;
+      margin: 30px auto 0;
+      padding: 15px 50px;
       font-size: 18px;
       font-weight: bold;
       background: linear-gradient(to right, #4e3f9e, #6657d9);
       color: white;
       border: none;
-      border-radius: 10px;
+      border-radius: 14px;
       cursor: pointer;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      transition: all 0.4s ease;
     }
 
     button:hover {
-      background: linear-gradient(to right, #372f7c, #4f44c2);
-      transform: scale(1.05);
+      transform: scale(1.08);
+      background: linear-gradient(to right, #372f7c, #5345be);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     }
 
     .result {
       text-align: center;
       font-size: 20px;
-      margin-top: 25px;
-      color: #2b2b2b;
+      margin-top: 30px;
       font-weight: 500;
+      color: #1e1e1e;
+      background-color: rgba(255, 255, 255, 0.7);
+      display: inline-block;
+      padding: 12px 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     @media (max-width: 600px) {
-      .table-container {
-        padding: 20px;
+      h1 {
+        font-size: 26px;
       }
 
-      h1 {
-        font-size: 24px;
+      .table-container {
+        padding: 25px 20px;
       }
 
       button {
-        width: 90%;
         font-size: 16px;
+        width: 100%;
       }
 
       td input {
@@ -183,5 +231,3 @@
   </script>
 </body>
 </html>
-
-
