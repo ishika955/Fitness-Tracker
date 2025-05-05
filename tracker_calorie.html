@@ -1,302 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calorie Calculator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color:#76bdc7 ;
-           
-           background-image: url("https://img.freepik.com/premium-photo/3d-rendering-product-display-podium-pastel-background-with-sports-fitness-equipments_711568-8.jpg");
-           background-repeat: no-repeat;
-           background-size:cover ;
-           
-        }
-        header, footer {
-            background-color:#76bdc7;
-            color: white;
-            text-align: center;
-            padding: 10px 20px;
-            
-        }
-        main {
-    padding: 20px;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calorie Calculator</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f9f9;
+      background-image: url("https://img.freepik.com/premium-photo/3d-rendering-product-display-podium-pastel-background-with-sports-fitness-equipments_711568-8.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
 
+    header, footer {
+      background-color: #3a9ca7;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
 
+    header h1, footer p {
+      margin: 0;
+    }
 
-.container {
-    flex: 1;
-    background-color: white;
-    opacity: 0.8;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+    main {
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-        .food-item {
-            margin: 10px 0;
-        }
-        .food-item label {
-            font-size: 16px;
-        }
-        .result {
-            margin-top: 20px;
-            font-size: 18px;
-            font-weight: bold;
-        }
+    h1[font] {
+      text-align: center;
+      color: #333;
+      font-size: 28px;
+      padding-top: 20px;
+    }
 
+    .container {
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
 
-        
-        .button {
-    display: block; 
-    padding: 20px 50px; 
-    font-size: 24px; 
-    font-weight: bold;
-    color: white;
-    background-color: #4e3f9e;
-    border: none;
-    border-radius: 10px; 
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    margin: 20px auto; 
-    width: 50%; 
-}
+    .container:hover {
+      transform: translateY(-5px);
+    }
 
-.button:hover {
-    background-color: #372f7c;
-    transform: scale(1.1);}
+    .container h1 {
+      color: #3a9ca7;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
 
-    </style>
+    .food-item {
+      margin: 12px 0;
+    }
+
+    .food-item label {
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .food-item input[type="checkbox"] {
+      transform: scale(1.2);
+      margin-right: 10px;
+    }
+
+    .button {
+      text-align: center;
+      margin: 30px auto;
+    }
+
+    .button button {
+      padding: 18px 60px;
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(to right, #4e3f9e, #6657d9);
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .button button:hover {
+      background: linear-gradient(to right, #372f7c, #5141aa);
+      transform: scale(1.05);
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #2e4053;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Calorie Calculator</h1>
-    </header>
+  <header>
+    <h1>Calorie Calculator</h1>
+  </header>
 
-    <center> <h1 font size="6">please click on what u have eaten whole day</h1></center>
+  <h1 font size="6">Please click on what you have eaten the whole day</h1>
 
-    <main>
-
-      
-       <br><br><br>
-       <div class="container">
-        <form id="calorieForm">
-            <h1>Salads</h1>
-            <div class="food-item">
-                <input type="checkbox" id="item1" value="379">
-                <label for="item1">Quinoa Chickpea Salad (379 cal)</label>
-            </div>
-            <div class="food-item">
-                <input type="checkbox" id="item2" value="347">
-                <label for="item2">Mixed Greens with Lentils & Sliced Apple (347 cal)</label>
-            </div>
-            <div class="food-item">
-                <input type="checkbox" id="item3" value="122">
-                <label for="item3">Italian White Bean Salad (122 cal)</label>
-            </div>
-            <div class="food-item">
-                <input type="checkbox" id="item4" value="376">
-                <label for="item4">Tuna & Olive Spinach Salad (376 cal)</label>
-            </div>
-            <div class="food-item">
-                <input type="checkbox" id="item5" value="367">
-                <label for="item5">Spinach & Dill Pasta Salad (367 cal)</label>
-            </div>
-            <div class="food-item">
-                <input type="checkbox" id="item6" value="481">
-                <label for="item6">Salmon Rice Bowl (481 cal)</label>
-            </div>
-            <div class="food-item">
-                <input type="checkbox" id="item7" value="432">
-                <label for="item7">Cajun-Spiced Tofu Tostadas with Beet Crema (432 cal)</label>
-            </div>
-            <div class="food-item">
-                <input type="checkbox" id="item8" value="358">
-                <label for="item8">Honey Walnut Shrimp (358 cal)</label>
-            </div>
-            <div class="food-item">
-                <input type="checkbox" id="item9" value="366">
-                <label for="item9">Creamy Tomato Salmon Skillet (366 cal)</label>
-            </div>
-            <div class="food-item">
-                <input type="checkbox" id="item10" value="500">
-                <label for="item10">Black Bean-Quinoa Bowl (500 cal)</label>
-            </div>
-            <div class="food-item">
-                <input type="checkbox" id="item11" value="505">
-                <label for="item11">Creamy Caramelized Cabbage Pasta (505 cal)</label>
-            </div>
-            <div class="food-item">
-                <input type="checkbox" id="item12" value="287">
-                <label for="item12">Pea Soup (287 cal)</label>
-            </div>
-            <div class="food-item">
-                <input type="checkbox" id="item13" value="322">
-                <label for="item13">Ground Beef & Potatoes Skillet (322 cal)</label>
-            </div>
-        </form>
-        </div>
-
-
-<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
- 
-<div class="container">
-    <form id="calorieForm">
-<h1>Veg-food</h1>
-<div class="food-item">
-    <input type="checkbox" id="item1" value="424">
-    <label for="item1">Paneer Tikka (424 cal)</label>
-</div>
-<div class="food-item">
-    <input type="checkbox" id="item2" value="100">
-    <label for="item2">Low-Carb Daal (100 cal)</label>
-</div>
-<div class="food-item">
-    <input type="checkbox" id="item3" value="22">
-    <label for="item3">Nutritious Lauki (Bottlegourd) (22 cal)</label>
-</div>
-<div class="food-item">
-    <input type="checkbox" id="item4" value="241">
-    <label for="item4">Pumpkin Soup (241 cal)</label>
-</div>
-<div class="food-item">
-    <input type="checkbox" id="item5" value="203.71">
-    <label for="item5">Spicy Quinoa Khichdi (203.71 cal)</label>
-</div>
-<div class="food-item">
-    <input type="checkbox" id="item6" value="184.32">
-    <label for="item6">Crispy Bhindi Fry (184.32 cal)</label>
-</div>
-<div class="food-item">
-    <input type="checkbox" id="item7" value="135">
-    <label for="item7">Aloo Palak (135 cal)</label>
-</div>
-<div class="food-item">
-    <input type="checkbox" id="item8" value="172">
-    <label for="item8">Jeera Aloo (172 cal)</label>
-</div>
-<div class="food-item">
-    <input type="checkbox" id="item9" value="278">
-    <label for="item9">Mushroom Curry (278 cal)</label>
-</div>
-<div class="food-item">
-    <input type="checkbox" id="item10" value="235">
-    <label for="item10">Rajma Chawal (235 cal)</label>
-</div>
-<div class="food-item">
-    <input type="checkbox" id="item11" value="272">
-    <label for="item11">Matar Paneer (272 cal)</label>
-</div>
-<div class="food-item">
-    <input type="checkbox" id="item12" value="220">
-    <label for="item12">Lemon Rice (220 cal)</label>
-</div>
-<div class="food-item">
-    <input type="checkbox" id="item13" value="153">
-    <label for="item13">Masala Oats (153 cal)</label>
-</div>
-<div class="food-item">
-    <input type="checkbox" id="item14" value="139">
-    <label for="item14">Lentil Soup (139 cal)</label>
-</div>
-</form>
-</div>
-
-<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------- -->
-
-<div class="container">
-    <form id="calorieForm">
-<h1>Non-veg food</h1>
-
-<div class="food-item">
-    <input type="checkbox" id="item1" value="291">
-    <label for="item1">Chicken Tikka (291 cal)</label>
-</div>
-<div class="food-item">
-    <input type="checkbox" id="item2" value="148">
-    <label for="item2">Pomfret Fish Fry (148 cal)</label>
-</div>
-<div class="food-item">
-    <input type="checkbox" id="item3" value="332">
-    <label for="item3">Chicken Kebab (332 cal)</label>
-</div>
-<div class="food-item">
-    <input type="checkbox" id="item4" value="461">
-    <label for="item4">Chicken Korma (461 cal)</label>
-</div>
-<div class="food-item">
-    <input type="checkbox" id="item5" value="136">
-    <label for="item5">Chingri Macher Malaikari (136 cal)</label>
-</div>
-<div class="food-item">
-    <input type="checkbox" id="item6" value="254">
-    <label for="item6">Chicken Salad (254 cal)</label>
-</div>
-<div class="food-item">
-    <input type="checkbox" id="item7" value="163">
-    <label for="item7">Egg Curry (163 cal)</label>
-</div>
-<div class="food-item">
-    <input type="checkbox" id="item8" value="15">
-    <label for="item8">Chicken Broth (15 cal)</label>
-</div>
-<div class="food-item">
-    <input type="checkbox" id="item9" value="243">
-    <label for="item9">Chicken Curry (243 cal)</label>
-</div>
-<div class="food-item">
-    <input type="checkbox" id="item10" value="493.9">
-    <label for="item10">Mutton Chaap (493.9 cal)</label>
-</div>
-<div class="food-item">
-    <input type="checkbox" id="item11" value="215">
-    <label for="item11">Doi Maach (215 cal)</label>
-</div>
-<div class="food-item">
-    <input type="checkbox" id="item12" value="292">
-    <label for="item12">Chicken Biryani (292 cal)</label>
-</div>
-<div class="food-item">
-    <input type="checkbox" id="item13" value="75">
-    <label for="item13">Nandu Rasam (75 cal)</label>
-</div>
-<div class="food-item">
-    <input type="checkbox" id="item14" value="466">
-    <label for="item14">Chicken Donair (466 cal)</label>
-</div>
-</form>
-</div>
-</main>
-
-
-<div class="button">
-    <button type="button" class="button" onclick="calculateCalories()">Calculate Calories</button>
-
-        <div  id="result"></div>
+  <main>
+    <!-- Salads -->
+    <div class="container">
+      <form id="calorieForm1">
+        <h1>Salads</h1>
+        <div class="food-item"><input type="checkbox" value="379"><label>Quinoa Chickpea Salad (379 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="347"><label>Mixed Greens with Lentils & Sliced Apple (347 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="122"><label>Italian White Bean Salad (122 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="376"><label>Tuna & Olive Spinach Salad (376 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="367"><label>Spinach & Dill Pasta Salad (367 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="481"><label>Salmon Rice Bowl (481 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="432"><label>Cajun-Spiced Tofu Tostadas with Beet Crema (432 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="358"><label>Honey Walnut Shrimp (358 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="366"><label>Creamy Tomato Salmon Skillet (366 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="500"><label>Black Bean-Quinoa Bowl (500 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="505"><label>Creamy Caramelized Cabbage Pasta (505 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="287"><label>Pea Soup (287 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="322"><label>Ground Beef & Potatoes Skillet (322 cal)</label></div>
+      </form>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Fitness App</p>
-    </footer>
+    <!-- Veg Food -->
+    <div class="container">
+      <form id="calorieForm2">
+        <h1>Veg-food</h1>
+        <div class="food-item"><input type="checkbox" value="424"><label>Paneer Tikka (424 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="100"><label>Low-Carb Daal (100 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="22"><label>Nutritious Lauki (22 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="241"><label>Pumpkin Soup (241 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="203.71"><label>Spicy Quinoa Khichdi (203.71 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="184.32"><label>Crispy Bhindi Fry (184.32 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="135"><label>Aloo Palak (135 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="172"><label>Jeera Aloo (172 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="278"><label>Mushroom Curry (278 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="235"><label>Rajma Chawal (235 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="272"><label>Matar Paneer (272 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="220"><label>Lemon Rice (220 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="153"><label>Masala Oats (153 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="139"><label>Lentil Soup (139 cal)</label></div>
+      </form>
+    </div>
 
-    <script>
-        function calculateCalories() {
-            const checkboxes = document.querySelectorAll('#calorieForm input[type="checkbox"]');
-            let totalCalories = 0;
-            checkboxes.forEach(checkbox => {
-                if (checkbox.checked) {
-                    totalCalories += parseInt(checkbox.value);
-                }
-            });
-            document.getElementById('result').textContent = `Total Calories: ${totalCalories}`;
-        }
-    </script>
+    <!-- Non-Veg Food -->
+    <div class="container">
+      <form id="calorieForm3">
+        <h1>Non-veg food</h1>
+        <div class="food-item"><input type="checkbox" value="291"><label>Chicken Tikka (291 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="148"><label>Pomfret Fish Fry (148 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="332"><label>Chicken Kebab (332 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="461"><label>Chicken Korma (461 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="136"><label>Chingri Macher Malaikari (136 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="254"><label>Chicken Salad (254 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="163"><label>Egg Curry (163 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="15"><label>Chicken Broth (15 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="243"><label>Chicken Curry (243 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="493.9"><label>Mutton Chaap (493.9 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="215"><label>Doi Maach (215 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="292"><label>Chicken Biryani (292 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="75"><label>Nandu Rasam (75 cal)</label></div>
+        <div class="food-item"><input type="checkbox" value="466"><label>Chicken Donair (466 cal)</label></div>
+      </form>
+    </div>
+  </main>
+
+  <div class="button">
+    <button type="button" onclick="calculateCalories()">Calculate Calories</button>
+    <div id="result"></div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Fitness App</p>
+  </footer>
+
+  <script>
+    function calculateCalories() {
+      const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+      let total = 0;
+      allCheckboxes.forEach(box => {
+        if (box.checked) total += parseFloat(box.value);
+      });
+      document.getElementById('result').textContent = `Total Calories: ${total.toFixed(2)}`;
+    }
+  </script>
 </body>
 </html>
