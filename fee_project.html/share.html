@@ -6,7 +6,6 @@
   <title>Workout Share</title>
   
   <style>
-    
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
@@ -19,7 +18,6 @@
       overflow: hidden; 
     }
 
-  
     .navbar {
       background-color: #333;
       padding: 10px;
@@ -39,7 +37,6 @@
       color: black;
     }
 
-    
     .container {
       text-align: center;
       padding: 50px;
@@ -48,19 +45,16 @@
       border-radius: 10px;
       max-width: 400px;
       width: 100%;
-      background:  rgba(254, 254, 254, 0.8);
+      background: rgba(254, 254, 254, 0.8);
       animation: fadeIn 1s ease-in-out forwards; 
       margin-top: 80px; 
-     
     }
 
-    /* Heading styles */
     h1 {
       color: #333;
-      animation: slideIn 1s 
+      animation: slideIn 1s;
     }
 
-    
     input {
       padding: 10px;
       margin: 10px;
@@ -70,14 +64,12 @@
       opacity: 1;
     }
 
-    
     .social-buttons {
       margin-top: 20px;
       animation: fadeIn 2s ease-in-out forwards;
       opacity: 1;
     }
 
-   
     .share-btn {
       background-color: #007bff;
       color: #fff;
@@ -92,18 +84,15 @@
       opacity: 1;
     }
 
-   
     .share-btn:hover {
       background-color: #0056b3;
       transform: scale(1.1);
     }
 
-    /* Hover Shake Effect */
     .share-btn:active {
       animation: shake 0.5s ease forwards; 
     }
 
-    
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -149,10 +138,10 @@
         transform: translateX(-5px);
       }
       100% {
-        transform: translateX(0);}
+        transform: translateX(0);
+      }
     }
 
-    
     .video-background {
       position: absolute; 
       top: 0;
@@ -178,17 +167,14 @@
       bottom: 0;
       width: 100%;
     }
-
   </style>
 </head>
 <body>
 
-
 <div class="navbar">
   <a href="fitnesstracker3.html">Home</a>
-  <a href="about us.html">About</a>
+  <a href="about_us.html">About</a>
 </div>
-
 
 <div class="video-background">
   <video autoplay muted loop preload="auto">
@@ -196,11 +182,9 @@
   </video>
 </div>
 
-
 <div class="container">
   <h1>Share Your Workout Stats</h1>
   
- 
   <div>
     <input type="number" id="steps" placeholder="Enter your steps" />
     <input type="number" id="calories" placeholder="Enter calories burned" />
@@ -213,14 +197,13 @@
   </div>
 </div>
 
-
 <footer>
   <p>&copy; 2024 TrackFit. All rights reserved.</p>
 </footer>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-   
+
     function getShareMessage() {
       const steps = document.getElementById('steps').value;
       const calories = document.getElementById('calories').value;
@@ -232,7 +215,6 @@
       }
     }
 
- 
     document.getElementById('facebook-share').addEventListener('click', function () {
       const shareMessage = getShareMessage();
       if (shareMessage) {
@@ -241,7 +223,6 @@
       }
     });
 
-    
     document.getElementById('snapchat-share').addEventListener('click', function () {
       const shareMessage = getShareMessage();
       if (shareMessage) {
@@ -250,7 +231,6 @@
       }
     });
 
-    
     document.getElementById('instagram-share').addEventListener('click', function () {
       const shareMessage = getShareMessage();
       if (shareMessage) {
@@ -263,3 +243,4 @@
 
 </body>
 </html>
+    
