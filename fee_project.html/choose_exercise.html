@@ -1,120 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Healthy Recipes</title>
-    
-    <style>
-        body {
-            background-image: url("https://img.freepik.com/premium-photo/flat-photo-sports-equipment-dumbbells-table-tennis-rackets-measuring-tape-trainers-water-bottle-fruit-protein-bars-sports-training-background_102209-258.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: white; 
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Healthy Recipes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      background: url("https://img.freepik.com/premium-photo/flat-photo-sports-equipment-dumbbells-table-tennis-rackets-measuring-tape-trainers-water-bottle-fruit-protein-bars-sports-training-background_102209-258.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
 
-        .container {
-            display: flex; 
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap; 
-            padding: 20px;
-            gap: 20px; 
-            height: 100vh;
-        }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      min-height: 100vh;
+    }
 
-        .category {
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 10px; 
-            overflow: hidden; 
-            width: 300px; 
-            text-align: center; 
-            transition: transform 0.3s; 
-            height: 450px;
-        }
+    .welcome-box {
+      text-align: center;
+      color: #fff;
+      animation: fadeIn 1s ease-in-out;
+      margin-bottom: 30px;
+    }
 
-        .category:hover {
-            transform: scale(1.05); 
-        }
+    .welcome-heading {
+      font-size: 32px;
+      font-weight: 700;
+      background: linear-gradient(90deg, #ffcc00, #ff9900);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
 
-        .category-image {
-            width: 100%; 
-            height: auto; 
-        }
+    .quote-day {
+      font-size: 16px;
+      font-weight: 300;
+      color: #eee;
+    }
 
-        .category-info {
-            padding: 15px; 
-        }
+    .quote-box {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      border-radius: 10px;
+      padding: 15px 25px;
+      font-style: italic;
+      max-width: 600px;
+      margin: 10px auto 30px;
+    }
 
-        h3 {
-            margin: 10px 0;
-        }
+    .cards-container {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-        p {
-            margin: 5px 0; 
-            font-size: 14px;
-        }
+    .start-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #ffcc00, #ff9900);
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
 
-        a {
-            color: #ffcc00; 
-            text-decoration: none;
-            font-weight: bold;
-        }
+.start-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #ff9900, #ffcc00);
+  box-shadow: 0 4px 12px rgba(255, 153, 0, 0.4);
+}
 
-        a:hover {
-            text-decoration: underline;
-        }
 
-        
-        @media (max-width: 600px) {
-            .category {
-                width: 90%; 
-            }
-        }
-    </style>
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 400px; /* Increased height */
+  perspective: 1000px;
+}
+
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .flip-card-front {
+      background-color: rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .flip-card-front img {
+      width: 100%;
+      height: 70%;
+      object-fit: cover;
+    }
+
+    .flip-card-front h3 {
+      color: #ffcc00;
+      margin: 10px 0;
+    }
+
+    .flip-card-back {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      transform: rotateY(180deg);
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .flip-card-back p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .streak-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#streakMessage {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffcc00;
+  margin-bottom: 15px;
+}
+
+#markWorkoutBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ffcc00;
+  border: none;
+  border-radius: 25px;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#markWorkoutBtn:hover {
+  transform: scale(1.05);
+  background-color: #ffaa00;
+}
+
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 900px) {
+      .cards-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="category" >
-            <img src="https://www.shutterstock.com/image-photo/smoldering-look-attractive-muscular-man-600nw-2036340593.jpg" alt="Image" class="category-image">
-            <div class="category-info">
-                <h3><a href="workout_musclet.html">Muscle Strenghtening</a></h3>
-                <p >Muscle-strengthening exercises build strength, enhance endurance, and boost metabolism. They support overall fitness and help prevent injuries, making daily activities easier.
-                    <br><br>
-                    "Strength training is not just about building muscle; it's about building resilience and confidence."
-                   
-
-                </p>
-            </div>
-        </div>
-
-        <div class="category">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAmd-brRyvHcQxGs0jijQ5YQP9qLyfqNopYA&s" alt=" Image" class="category-image">
-            <div class="category-info">
-                <h3><a href="workout_yoga.html">Yoga</a></h3>
-                <p >Yoga enhances flexibility and strength while promoting relaxation and mindfulness. It's a holistic practice that supports both physical health and mental well-being.
-<br><br>
-"Yoga is the journey of the self, through the self, to the self." 
-<br>
-— The Bhagavad Gita
-                </p>
-            </div>
-        </div>
-
-        <div class="category" >
-            <img src="https://us.images.westend61.de/0001609163j/full-body-side-view-of-flexible-barefoot-female-practicing-bhujangasana-during-yoga-session-on-rooftop-against-flying-birds-ADSF30481.jpg" alt=" Image" class="category-image">
-            <div class="category-info">
-                <h3><a href="workout_flexibility.html">Flexibility</a></h3>
-                <p >Flexibility exercises enhance joint range of motion and improve overall mobility. They help reduce the risk of injuries and promote better posture and balance.
-                    <br><br>
-                    "Flexibility is the art of bending without breaking; it's strength in adaptability. Embrace it, and you'll find balance in every challenge." 
-                </p>
-            </div>
-        </div>
+  <div class="container">
+    <div class="welcome-box">
+      <h2 class="welcome-heading">Welcome back, <span id="userName">User</span>.</h2>
+      <p class="quote-day">How are you? Here's your motivational quote for today</p>
+      <div class="quote-box" id="dailyQuote">Loading your quote...</div>
     </div>
 
+    <div class="cards-container">
     
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://www.shutterstock.com/image-photo/smoldering-look-attractive-muscular-man-600nw-2036340593.jpg" alt="Muscle">
+            <h3>Muscle Strengthening</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Muscle-strengthening exercises build strength, enhance endurance, and boost metabolism. They support overall fitness and help prevent injuries, making daily activities easier.<br>
+            "Strength training is not just about building muscle; it's about building resilience and confidence."</p>
+        <!-- Inside the back of the flip card -->
+<button class="start-btn">Start Now</button>
+ 
+        </div>
+        </div>
+      </div>
+
+  
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAmd-brRyvHcQxGs0jijQ5YQP9qLyfqNopYA&s" alt="Yoga">
+            <h3>Yoga</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Yoga enhances flexibility and strength while promoting relaxation and mindfulness. It's a holistic practice that supports both physical health and mental well-being.<br><br>
+            "Yoga is the journey of the self, through the self, to the self." — The Bhagavad Gita</p>
+        <!-- Inside the back of the flip card -->
+<button class="start-btn">Start Now</button>
+  
+        </div>
+        </div>
+      </div>
+
+ 
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://us.images.westend61.de/0001609163j/full-body-side-view-of-flexible-barefoot-female-practicing-bhujangasana-during-yoga-session-on-rooftop-against-flying-birds-ADSF30481.jpg" alt="Flexibility">
+            <h3>Flexibility</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Flexibility exercises enhance joint range of motion and improve overall mobility. They help reduce the risk of injuries and promote better posture and balance.<br><br>
+            "Flexibility is the art of bending without breaking; it's strength in adaptability."</p>
+        <!-- Inside the back of the flip card -->
+<button class="start-btn">Start Now</button>
+ 
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="streak-container">
+        <p id="streakMessage">🔥 You’ve worked out 0 days in a row!</p>
+        <button id="markWorkoutBtn">Mark Workout Complete</button>
+      </div>
+  </div>
+  
+  
+
+  <script>
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    if (userInfo) {
+      document.getElementById('userName').textContent = userInfo.fname;
+    }
+
+    const quotes = [
+      "Push yourself, because no one else is going to do it for you.",
+      "Success starts with self-discipline.",
+      "Train insane or remain the same.",
+      "The pain you feel today will be the strength you feel tomorrow.",
+      "Don’t wish for it. Work for it.",
+      "Your body can stand almost anything. It’s your mind you have to convince.",
+      "It’s not about having time. It’s about making time.",
+      "Work hard in silence. Let success make the noise.",
+      "Fitness is not about being better than someone else. It’s about being better than you used to be.",
+      "When you feel like quitting, think about why you started."
+    ];
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+document.getElementById('dailyQuote').textContent = quotes[randomIndex];
+
+
+
+     </script>
+
+<script>
+  // Utility to get last workout date from localStorage
+  function getLastWorkoutDate() {
+    return localStorage.getItem('lastWorkoutDate');
+  }
+
+  // Utility to get streak count from localStorage
+  function getStreakCount() {
+    return parseInt(localStorage.getItem('streakCount')) || 0;
+  }
+
+  // Function to update streak display
+  function updateStreakDisplay(streak) {
+    document.getElementById('streakMessage').textContent = `🔥 You’ve worked out ${streak} day${streak > 1 ? 's' : ''} in a row!`;
+  }
+
+  function markWorkoutComplete() {
+    const currentDate = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+    const lastWorkoutDate = getLastWorkoutDate();
+    let streak = getStreakCount();
+
+    if (lastWorkoutDate === currentDate) {
+      alert("You've already marked today's workout as complete!");
+      return;
+    }
+
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    const yesterdayStr = yesterday.toISOString().split('T')[0];
+
+    if (lastWorkoutDate === yesterdayStr) {
+      // Continued streak
+      streak++;
+    } else {
+      // Streak reset
+      streak = 1;
+    }
+
+    // Save updated data
+    localStorage.setItem('lastWorkoutDate', currentDate);
+    localStorage.setItem('streakCount', streak);
+
+    updateStreakDisplay(streak);
+  }
+
+  // Event listener for button click
+  document.getElementById('markWorkoutBtn').addEventListener('click', markWorkoutComplete);
+
+  // On page load: show current streak
+  updateStreakDisplay(getStreakCount());
+</script>
+
 </body>
 </html>
