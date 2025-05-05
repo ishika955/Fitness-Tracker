@@ -1,144 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness App - Heart Rate Tracker</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color:#76bdc7 ;
-           
-            background-image: url("https://img.freepik.com/premium-photo/3d-rendering-product-display-podium-pastel-background-with-sports-fitness-equipments_711568-8.jpg");
-            background-repeat: no-repeat;
-            background-size:cover ;
-  
-  }
-
-        h1 {
-            text-align: center;
-            color: #4e3f9e;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            text-align: center;
-            padding: 8px;
-        }
-
-        th {
-            background-color:#39a0d4 ;
-            color: white;
-        }
-
-        td input {
-            width: 50px;
-            text-align: center;
-        }
-
-        
-    td:first-child {
-    color: #e6e6e6; 
-    font-weight: bold; 
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fitness App - Heart Rate Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-        button {
-            margin: 20px auto;
-            display: block;
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #39a0d4;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
 
-        button:hover {
-            background-color: #372f7c;
-        }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url("https://img.freepik.com/premium-photo/3d-rendering-product-display-podium-pastel-background-with-sports-fitness-equipments_711568-8.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: #222;
+      overflow-x: hidden;
+    }
 
-        .result {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 18px;
-            color: #fff8f8;
-        }
-    </style>
+    h1 {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 36px;
+      color: #4e3f9e;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      animation: fadeInDown 1s ease;
+    }
+
+    .table-container {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      max-width: 950px;
+      margin: 50px auto;
+      padding: 40px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+      animation: fadeInUp 1.5s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .table-container:hover {
+      transform: scale(1.01);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      text-align: center;
+      padding: 14px 10px;
+      font-size: 16px;
+    }
+
+    th {
+      background: rgba(78, 63, 158, 0.85);
+      color: #fff;
+      border-radius: 10px 10px 0 0;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    td {
+      background-color: rgba(255, 255, 255, 0.8);
+      border-bottom: 1px solid #ccc;
+      transition: background-color 0.3s;
+    }
+
+    tr:hover td {
+      background-color: rgba(255, 255, 255, 1);
+    }
+
+    td:first-child {
+      font-weight: 600;
+      color: #333;
+    }
+
+    td input {
+      width: 80px;
+      padding: 8px;
+      border: 1px solid #aaa;
+      border-radius: 8px;
+      font-size: 15px;
+      text-align: center;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    td input:focus {
+      border-color: #4e3f9e;
+      box-shadow: 0 0 8px rgba(78, 63, 158, 0.4);
+    }
+
+    button {
+      display: block;
+      margin: 30px auto 0;
+      padding: 15px 50px;
+      font-size: 18px;
+      font-weight: bold;
+      background: linear-gradient(to right, #4e3f9e, #6657d9);
+      color: white;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      transition: all 0.4s ease;
+    }
+
+    button:hover {
+      transform: scale(1.08);
+      background: linear-gradient(to right, #372f7c, #5345be);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    .result {
+      text-align: center;
+      font-size: 20px;
+      margin-top: 30px;
+      font-weight: 500;
+      color: #1e1e1e;
+      background-color: rgba(255, 255, 255, 0.7);
+      display: inline-block;
+      padding: 12px 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 26px;
+      }
+
+      .table-container {
+        padding: 25px 20px;
+      }
+
+      button {
+        font-size: 16px;
+        width: 100%;
+      }
+
+      td input {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Heart Rate Monitoring</h1>
+  <h1>Heart Rate Monitoring</h1>
 
+  <div class="table-container">
     <table>
-        <thead>
-            <tr>
-                <th>Day</th>
-                <th>Morning Heart Rate</th>
-                <th>Evening Heart Rate</th>
-            </tr>
-        </thead>
-        <tbody id="heartRateTable">
-            <!-- Rows will be inserted by JavaScript -->
-        </tbody>
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Morning Heart Rate</th>
+          <th>Evening Heart Rate</th>
+        </tr>
+      </thead>
+      <tbody id="heartRateTable">
+        <!-- Rows will be inserted by JavaScript -->
+      </tbody>
     </table>
 
     <button onclick="calculateAverage()">Calculate Weekly Averages</button>
+    <div class="result" id="resultDisplay"></div>
+  </div>
 
-    <div class="result" id="resultDisplay"> </div>
+  <script>
+    const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
-    <script>
-        const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    const tableBody = document.getElementById('heartRateTable');
+    days.forEach(day => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${day}</td>
+        <td><input type="number" min="30" max="200" placeholder="BPM" /></td>
+        <td><input type="number" min="30" max="200" placeholder="BPM" /></td>
+      `;
+      tableBody.appendChild(row);
+    });
 
-        // Dynamically create rows for the table
-        const tableBody = document.getElementById('heartRateTable');
-        days.forEach(day => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${day}</td>
-                <td><input type="number" min="30" max="200" placeholder="BPM"></td>
-                <td><input type="number" min="30" max="200" placeholder="BPM"></td>
-            `;
-            tableBody.appendChild(row);
-        });
+    function calculateAverage() {
+      const rows = tableBody.querySelectorAll('tr');
+      let morningTotal = 0, eveningTotal = 0, validMorning = 0, validEvening = 0;
 
-        // Calculate weekly averages
-        function calculateAverage() {
-            const rows = tableBody.querySelectorAll('tr');
-            let morningTotal = 0, eveningTotal = 0, validMorning = 0, validEvening = 0;
+      rows.forEach(row => {
+        const morningInput = row.children[1].querySelector('input').value;
+        const eveningInput = row.children[2].querySelector('input').value;
 
-            rows.forEach(row => {
-                const morningInput = row.children[1].querySelector('input').value;
-                const eveningInput = row.children[2].querySelector('input').value;
-
-                if (morningInput) {
-                    morningTotal += parseInt(morningInput);
-                    validMorning++;
-                }
-                if (eveningInput) {
-                    eveningTotal += parseInt(eveningInput);
-                    validEvening++;
-                }
-            });
-
-            const morningAverage = validMorning > 0 ? (morningTotal / validMorning).toFixed(2) : "N/A";
-            const eveningAverage = validEvening > 0 ? (eveningTotal / validEvening).toFixed(2) : "N/A";
-
-            // Display results
-            const resultDisplay = document.getElementById('resultDisplay');
-            resultDisplay.innerHTML = `
-                <p><strong>Average Morning Heart Rate:</strong> ${morningAverage} BPM</p>
-                <p><strong>Average Evening Heart Rate:</strong> ${eveningAverage} BPM</p>
-            `;
+        if (morningInput) {
+          morningTotal += parseInt(morningInput);
+          validMorning++;
         }
-    </script>
+        if (eveningInput) {
+          eveningTotal += parseInt(eveningInput);
+          validEvening++;
+        }
+      });
+
+      const morningAverage = validMorning > 0 ? (morningTotal / validMorning).toFixed(2) : "N/A";
+      const eveningAverage = validEvening > 0 ? (eveningTotal / validEvening).toFixed(2) : "N/A";
+
+      const resultDisplay = document.getElementById('resultDisplay');
+      resultDisplay.innerHTML = `
+        <p><strong>Average Morning Heart Rate:</strong> ${morningAverage} BPM</p>
+        <p><strong>Average Evening Heart Rate:</strong> ${eveningAverage} BPM</p>
+      `;
+    }
+  </script>
 </body>
 </html>
