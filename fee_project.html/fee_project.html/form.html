@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness Survey Form</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background-image: url("https://i.pinimg.com/564x/88/63/3b/88633b5c22b9aafc14d6ff73a764491c.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: white;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    form {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      margin: auto;
+      color: white;
+      background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKrUAIJB6KLudzZJzUAo6O-654HrXMFtTEng&s");
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-size: x-large ;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    hr {
+      border: 1px solid #e1dddd;
+      margin-bottom: 25px;
+    }
+
+    .registerbtn {
+      background-color: #3c547e;
+      color: white;
+      padding: 10px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+      border-radius: 5px;
+      font-size: larger;
+    }
+
+    .registerbtn:hover {
+      opacity: 1;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .signin {
+      background-color: #aaa9a9;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0 20px;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .images {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .images img {
+      width: 150px;
+      border-radius: 50%;
+    }
+
+    .checkboxes{
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+
+    .checkboxes label {
+      display: inline;
+    }
+
+    fieldset {
+      border: none;
+      margin-bottom: 20px;
+    }
+
+    legend {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .radios {
+      display: flex;
+      justify-content: center;  
+      gap: 50px;               
+      padding: 0;               
+    }
+
+    .radios label {
+      display: flex;
+      align-items: center;
+      margin: 0;               
+      padding: 0;               
+    }
+
+    .radios input {
+      margin: 0;                
+    }
+
+    @media (max-width: 768px) {
+  form {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>Fitness Survey</h1>
+    <p style="text-align: center;"><i>"Please answer the questions satisfactorily"</i></p>
+
+    <form id="loginForm" action="fitnesstracker3.html" method="GET">
+
+      <!-- Gender Selection -->
+      <fieldset>
+        <center><legend>Gender</legend></center>
+        <div class="images">
+          <img src="https://static.vecteezy.com/system/resources/previews/045/765/985/original/powerful-man-graphic-icons-human-body-signs-isolated-on-white-background-bodybuilding-and-fitness-symbol-free-vector.jpg" alt="Male">
+          <img src="https://t4.ftcdn.net/jpg/02/38/51/51/360_F_238515151_uzygoVfrZyfTtPmmTRFjGl4j4GQQJ7I3.jpg" alt="Female">
+        </div>
+        <div class="radios">
+          <label><input type="radio" name="gender" value="male" required> Male</label>
+          <label><input type="radio" name="gender" value="female" required> Female</label>
+        </div>
+      </fieldset>
+
+      <!-- Name and Password -->
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="fname" placeholder="Enter your first name" maxlength="30" required>
+
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="lname" placeholder="Enter your last name" maxlength="30" required>
+
+      <label for="pwd">Password</label>
+      <input type="password" id="pwd" name="pwd" placeholder="Enter your password" required>
+
+      <label for="height">Height (cm)</label>
+      <input type="number" id="height" name="height" placeholder="Enter your height in cm" required>
+
+      <label for="weight">Weight (kg)</label>
+      <input type="number" id="weight" name="weight" placeholder="Enter your weight in kg" required>
+
+      <!-- Goal -->
+      <fieldset>
+        <center><legend>What is your goal?</legend></center>
+        <div class="images">
+          <img src="https://as2.ftcdn.net/v2/jpg/01/89/77/07/1000_F_189770799_Iwifpg003WY6eVSePjEbikKNhCF0DKZM.jpg" alt="Get toned">
+          <img src="https://img.freepik.com/premium-vector/noir-nature-black-icon-woman-fitness-logo-strong-spirit-vector-woman-fitness-logo-black_706143-107730.jpg?semt=ais_hybrid" alt="Lose weight">
+        </div>
+        <div class="radios">
+          <label><input type="radio" name="goal" value="toned" required> Get toned</label>
+          <label><input type="radio" name="goal" value="lose-weight" required> Lose weight</label>
+        </div>
+      </fieldset>
+
+      <!-- Body Type -->
+      <fieldset>
+        <center><legend>Body Type</legend></center>
+        <div class="images">
+          <img src="https://cdn.vectorstock.com/i/preview-1x/67/87/man-with-rectangle-body-shape-arms-akimbo-vector-41496787.jpg" alt="Rectangle">
+          <img src="https://www.shutterstock.com/image-vector/man-round-body-shape-demonstrate-260nw-2123640248.jpg" alt="Rounded">
+          <img src="https://media.istockphoto.com/id/1370365882/vector/woman-pear-body-shape-female-character-figure-types-concept-girl-with-wide-hips-and-narrow.jpg?s=612x612&w=0&k=20&c=xV9SFAyeybr6rJ9pyNIaRIi9AjqX5Ll_lSLYQz2qcQM=" alt="Lightbulb">
+        </div>
+        <div class="radios">
+          <label><input type="radio" name="body_type" value="rectangle" required> Rectangle</label>
+          <label><input type="radio" name="body_type" value="rounded" required> Rounded</label>
+          <label><input type="radio" name="body_type" value="lightbulb" required> Lightbulb</label>
+        </div>
+      </fieldset>
+
+      <!-- Comments and Training Days -->
+      <label for="comments">Any previous workout experience:</label>
+      <textarea id="comments" name="comments" rows="4" placeholder="Enter your comments here" required></textarea>
+
+      <fieldset>
+        <legend>Pick training days:</legend>
+        <div class="checkboxes">
+          <label><input type="checkbox" name="training_days" value="monday"> Monday</label>
+          <label><input type="checkbox" name="training_days" value="tuesday"> Tuesday</label>
+          <label><input type="checkbox" name="training_days" value="wednesday"> Wednesday</label>
+          <label><input type="checkbox" name="training_days" value="thursday"> Thursday</label>
+          <label><input type="checkbox" name="training_days" value="friday"> Friday</label>
+          <label><input type="checkbox" name="training_days" value="saturday"> Saturday</label>
+          <label><input type="checkbox" name="training_days" value="sunday"> Sunday</label>
+        </div>
+      </fieldset>
+
+      <!-- Activity Level -->
+      <label for="activity">Are you typically on your feet or sitting most of the time?</label>
+      <textarea id="activity" name="activity" rows="4" placeholder="Describe your activity level" required></textarea>
+
+      <div class="container registerbtn">
+        <center><button type="submit" class="registerbtn">Register</button></center>
+      </div>
+
+      <hr>
+      <center><p style="color:white;">By creating an account, you agree to our <a href="#" style="color:white; text-decoration:underline;">Terms & Privacy</a>.</p></center>
+      <div class="container signin">
+        <p>Already have an account? <a href="login.html" style="color:blue;">Sign in</a>.</p>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // 
+
+      const firstName = document.getElementById('fname').value;
+      const password = document.getElementById('pwd').value; 
+
+      if (firstName && password) {
+        
+        const userInfo = {
+          fname: firstName,
+          lname: document.getElementById('lname').value,
+          password: password,
+          height: document.getElementById('height').value,
+          weight: document.getElementById('weight').value,
+          goal: document.querySelector('input[name="goal"]:checked').value,
+          body_type: document.querySelector('input[name="body_type"]:checked').value,
+          progress: 0 
+        };
+
+        localStorage.setItem('userInfo', JSON.stringify(userInfo));
+
+        
+        window.location.href = 'fitnesstracker3.html'; 
+      } else {
+        alert("Please fill in both fields.");
+      }
+    });
+  </script>
+
+</body>
+</html>

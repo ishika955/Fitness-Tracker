@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness App - Food Items</title>
+    <style>* {
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f4f4f4;
+        color: #333;
+        background-image: url("https://i.pinimg.com/564x/88/63/3b/88633b5c22b9aafc14d6ff73a764491c.jpg");
+         background-repeat: no-repeat;
+         background-size:cover ;
+  
+  
+    }
+    a {
+  
+  text-decoration: none;
+}
+    
+    header {
+        background-color:#4e3f9e;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+    }
+    
+    .food-item {
+        background: rgb(174, 227, 255);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin: 15px;
+        padding: 15px;
+        text-align: center;
+        width: 200px;
+        transition: transform 0.2s;
+    }
+    
+    .food-item:hover {
+        transform: scale(1.05);
+    }
+    
+    .food-item img {
+        border-radius: 10px;
+        width: 100%;
+        height: auto;
+    }
+    
+    h1 {
+        margin: 0;
+    }
+    
+    h2 {
+        color: #4d35a4;
+    }
+    
+    footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Healthy Salad Choices</h1>
+    </header>
+    
+    <main>
+        <div class="food-item">
+            <img src="https://www.eatingwell.com/thmb/E0vAqGB0HqKyt_650ALaXTL3Pkc=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/4550449-ff645c4282854a23b6f87483013bd1b5.jpg" alt="Quinoa Chickpea Salad">
+            <h2><a href="https://www.youtube.com/shorts/Cby6l41RdbI?feature=share">Quinoa Chickpea Salad</a></h2>
+            <p>Calories:379g </p>
+            <p>Protein: 16g</p>
+            <p>Fats: 11g</p>
+            <p>Carbs:59g</p>
+        </div>
+        
+        <div class="food-item">
+            <img src="https://www.eatingwell.com/thmb/7DcYaQclQ5RjwhBAnoPZXVuEye4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/4548014-4249cdf534e6433ba7c0b913c9026079.jpg" alt="Mixed Greens with Lentils & Sliced Apple">
+            <h2><a href="https://youtu.be/BKxxny4hwIU">Mixed Greens with Lentils & Sliced Apple</a></h2>
+            <p>Calories: 347</p>
+            <p>Protein: 13g</p>
+            <p>Fats: 13g</p>
+            <p>Carbs: 48g</p>
+        </div>
+        
+        <div class="food-item">
+            <img src="https://www.eatingwell.com/thmb/WEmYzaq49jM6JMADmtBI4YrSfbI=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/5551222-1739aafa94a9481b85e643d4a0312d4f.jpg" alt="Italian White Bean Salad">
+            <h2><a href="https://www.youtube.com/shorts/it2GQcprkTQ?feature=share">Italian White Bean Salad</a></h2>
+            <p>Calories: 122</p>
+            <p>Protein: 5g</p>
+            <p>Fats: 4g</p>
+            <p>Carbs: 16g </p>
+        </div>
+        
+        <div class="food-item">
+            <img src="https://www.eatingwell.com/thmb/1J5c0EK2HqSAJuVJ3aWiQ58Tsw0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Mediterranean-Tuna-Spinach-Salad-1-3-356393d4575d4be69f3efcee27bbb5d0.jpeg" alt="Tuna & Olive Spinach Salad">
+            <h2><a href="https://www.youtube.com/shorts/5d1UV9RaUPI?feature=share">Tuna & Olive Spinach Salad</a></h2>
+            <p>Calories: 376</p>
+            <p>Protein: 26g</p>
+            <p>Fats: 21g</p>
+            <p>arbs: 26g
+            </p>
+        </div>
+        
+        <div class="food-item">
+            <img src="https://www.eatingwell.com/thmb/F80dtbl-UiSho_Pbmj21BXGhs_A=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/7861176-bcf003b33a9a4ee5b33620768a1ae8f0.jpg" alt="Spinach & Dill Pasta Salad">
+            <h2><a href="https://youtu.be/cZ-d49oU09w">Spinach & Dill Pasta Salad</a></h2>
+            <p>Calories: 367</p>
+            <p>Protein: 12g</p>
+            <p>Fats: 19g</p>
+            <p>Carbs: 41g
+            </p>
+        </div>
+
+
+        <div class="food-item">
+            <img src="https://www.eatingwell.com/thmb/FytA4aJdcjndUeJz2AYaGfKFIUw=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/7960938-salmon-rice-bowl-beauty2-8fc6acaf9e51440280f7460c34efaead.jpg">
+            <h2><a href="https://www.youtube.com/shorts/jlyDXmsPGQc?feature=share">Salmon Rice Bowl</a></h2>
+            <p>Calories: 481</p>
+            <p>Protein: 18g</p>
+            <p>Fats: 25g</p>
+            <p>Carbs: 47g
+            </p>
+        </div>
+
+
+        <div class="food-item">
+            <img src="https://www.eatingwell.com/thmb/SPusCO9DtyRAAi0knbKBVVCvLk4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/cajun-spiced-tofu-tostadas-with-beet-crema-20ed3af4d750401a8149e61dedc8dec6.jpg" alt="Cajun-Spiced Tofu Tostadas with Beet Crema">
+            <h2><a href="https://www.youtube.com/shorts/Jq9rU4F-6Hw?feature=share">Cajun-Spiced Tofu Tostadas with Beet Crema</a></h2>
+            <p>Calories: 432</p>
+            <p>Protein: 16g</p>
+            <p>Fats: 25g</p>
+            <p>Carbs: 41g
+            </p>
+        </div>
+
+
+        <div class="food-item">
+            <img src="https://www.eatingwell.com/thmb/RqOiEFpoqYYXdPFdqL-0xSotoFQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/7582908-7138f66832914cf9b0515929e16dbfc8.jpg">
+            <h2><a href="https://www.youtube.com/shorts/CMa2l4ss3dM?feature=share">Honey Walnut Shrimp</a></h2>
+            <p>Calories: 358</p>
+            <p>Protein: 25g</p>
+            <p>Fats: 14g</p>
+            <p>Carbs: 24g
+            </p>
+        </div>
+
+
+        <div class="food-item">
+            <img src="https://www.eatingwell.com/thmb/F80dtbl-UiSho_Pbmj21BXGhs_A=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/7861176-bcf003b33a9a4ee5b33620768a1ae8f0.jpg" alt="Spinach & Dill Pasta Salad">
+            <h2><a href="https://www.youtube.com/shorts/nC2oLHCIOmk?feature=share">Spinach & Dill Pasta Salad</a></h2>
+            <p>Calories: 367</p>
+            <p>Protein: 12g</p>
+            <p>Fats: 19g</p>
+            <p>Carbs: 41g
+            </p>
+        </div>
+
+        <div class="food-item">
+            <img src="https://www.eatingwell.com/thmb/wHqUCkRhyumPgLZ78-_th7OVnv8=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/EWL-7910566-20-Minute-Creamy-Tomato-Salmon-Skillet-1x1-Beauty-d1028fd7528b44af818ab224b5ba1723.jpg">
+            <h2><a href="https://www.youtube.com/shorts/XfbnAPQgUz8?feature=share">Creamy Tomato Salmon Skillet</a></h2>
+            <p>Calories: 366</p>
+            <p>Protein: 30g</p>
+            <p>Fats: 21g</p>
+            <p>Carbs: 10g
+            </p>
+        </div>
+
+        <div class="food-item">
+            <img src="https://www.eatingwell.com/thmb/dEiy1lsOrCqn1mjy4tsSSCZF4Vo=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/ewl-black-bean-quinoa-bowl-beauty-260726-4000x4000-8e1a3ece48d946f6b12eb1663959c42e.jpg">
+            <h2><a href="https://youtu.be/UV8o2fB2AAA">Black Bean-Quinoa Bowl</a></h2>
+            <p>Calories: 500</p>
+            <p>Protein: 20g</p>
+            <p>Fats: 16g</p>
+            <p>Carbs: 74g
+            </p>
+        </div>
+
+        <div class="food-item">
+            <img src="https://www.eatingwell.com/thmb/xsvk_rnJe9VIuu79zkAPIjsPFcU=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gw-Creamy-Cabbage-Pasta-2x3-0763-e37a9dec9e60448da8313b9e5f8a264e.jpg">
+            <h2><a href="https://www.youtube.com/shorts/GXuBJS2WF-Y?feature=share">Creamy Caramelized Cabbage Pasta</a></h2>
+            <p>Calories: 505</p>
+            <p>Protein: 16g</p>
+            <p>Fats: 19g</p>
+            <p>Carbs:69g
+            </p>
+    
+        </div>
+
+        <div class="food-item">
+            <img src="https://www.eatingwell.com/thmb/XnCAQ3NqghCGXQAZu9NdWY8FOTE=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/6422783-505ca62f718141f189a20ba3e589b06b.jpg">
+            <h2><a href="https://www.youtube.com/shorts/HPO5rX-bpmM?feature=share">Pea Soup</a></h2>
+            <p>Calories: 287</p>
+            <p>Protein: 17g</p>
+            <p>Fats: 9g</p>
+            <p>Carbs: 38g
+            </p>
+        </div>
+        <div class="food-item">
+            <img src="https://www.eatingwell.com/thmb/w7x2o4lZZ0tZNW8RRwXfK-Tc-fU=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/ground-beef-and-potato-skillet-b42511c359784b499fd6cfb7852c33ed.jpg">
+            <h2><a href="https://www.youtube.com/shorts/Gv8WOwTpEAE?feature=share">Ground Beef & Potatoes Skillet</a></h2>
+            <p>Calories: 322</p>
+            <p>Protein: 20g</p>
+            <p>Fats: 15g</p>
+            <p>Carbs: 30g
+            </p>
+        </div>
+    </main>
+
+    
+
+
+
+
+    <h1 id ="v1"></h1>
+
+
+      
+        <header>
+            <h1>Healthy Veg Food Choices</h1>
+        </header>
+        
+        <main>
+            <div class="food-item">
+                <img src= "https://sharethespice.com/wp-content/uploads/2024/02/Paneer-Tikka-Featured.jpg" alt="Paneer Tikka">
+                <h2><a href="https://www.youtube.com/shorts/WVfMuAwht30?feature=share">Paneer Tikka</a></h2>
+                <p>Calories: 424</p>
+                <p>Protein: 12g</p>
+                <p>Fats: 14.8g</p>
+                <p>Carbs: 21g</p>
+            </div>
+            
+            <div class="food-item">
+                <img src="https://holycowvegan.net/wp-content/uploads/2021/12/vegan-coconut-dal-keto-low-carb-4.jpg" alt="Low-Carb Daal">
+                <h2><a href="https://youtu.be/bMAJzSPw1r8">Low-Carb Daal </a></h2>
+                <p>Calories: 100</p>
+                <p>Protein: 7g</p>
+                <p>Fats: 0.4g</p>
+                <p>Carbs: 16g</p>
+            </div>
+            
+            <div class="food-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPlksr-l4kh1Kwdn5XD4ds_TbDbQZ2IGRZWQ&s" alt="Nutritious Lauki (Bottlegourd)">
+                <h2><a href="https://www.youtube.com/shorts/3lel_Iojzi4?feature=share">Nutritious Lauki (Bottlegourd) </a></h2>
+                <p>Calories: 22</p>
+                <p>Protein: 0.9g</p>
+                <p>Fats: 0g</p>
+                <p>Carbs: 5.4g </p>
+            </div>
+            
+            <div class="food-item">
+                <img src="https://toshistable.com/wp-content/uploads/2022/09/pumpkin-soup-without-cream-01.jpg" alt="Pumpkin Soup">
+                <h2><a href="https://www.youtube.com/shorts/1IOWuYsN82I?feature=share">Pumpkin Soup</a></h2>
+                <p>Calories: 241<p>
+                <p>Protein: 9.5g</p>
+                <p>Fats: 11g</p>
+                <p>Carbs: 27g
+                </p>
+            </div>
+            
+            <div class="food-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe2rSWReCf5JQHQRh-0dblQMvtGoAL1Lcy6g&s" alt="Spicy Quinoa Khichdi">
+                <h2><a href="https://www.youtube.com/shorts/zOmch908bck?feature=share">Spicy Quinoa Khichdi</a></h2>
+                <p>Calories: 203.71</p>
+                <p>Protein: 10.12g</p>
+                <p>Fats: 5.06g</p>
+                <p>Carbs: 28.11g
+                </p>
+            </div>
+    
+    
+            <div class="food-item">
+                <img src="https://i.ytimg.com/vi/ilwOlSb1bUs/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCeTYDFwDhbejVTZDMwOeuaU-Lwcg" alt="Crispy Bhindi Fry">
+                <h2><a href="https://www.youtube.com/shorts/h8b-Jq8_ndE?feature=share">Crispy Bhindi Fry</a></h2>
+                <p>Calories: 184.32</p>
+                <p>Protein: 3.04g</p>
+                <p>Fats: 17g</p>
+                <p>Carbs: 12g
+                </p>
+            </div>
+    
+    
+            <div class="food-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxq3Csujiuq3LLZbxmBsqqLOrgs8czdiBGOg&s" alt="Aloo Palak">
+                <h2><a href="https://www.youtube.com/shorts/xS5sPC3pmLY?feature=share">Aloo Palak</a></h2>
+                <p>Calories: 135</p>
+                <p>Protein: 2g</p>
+                <p>Fats: 7g</p>
+                <p>Carbs: 25g
+                </p>
+            </div>
+    
+    
+            <div class="food-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIS4Xx5LAx5A4Lg5JhQun6AsnWiPD3NGCTvQ&s" alt="Jeera Aloo">
+                <h2><a href="https://www.youtube.com/shorts/e-NDTDqOLzU?feature=share">Jeera Aloo</a></h2>
+                <p>Calories: 172</p>
+                <p>Protein: 3.5g</p>
+                <p>Fats: 5.6g</p>
+                <p>Carbs: 28g
+                </p>
+            </div>
+    
+    
+            <div class="food-item">
+                <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2024/04/mushroom-masala-curry-recipe.jpg" alt="Mushroom Curry">
+                <h2><a href="https://www.youtube.com/shorts/CqwBrWexnAQ?feature=share">Mushroom Curry</a></h2>
+                <p>Calories: 278</p>
+                <p>Protein: 9g</p>
+                <p>Fats: 5.6g</p>
+                <p>Carbs: 42g
+                </p>
+            </div>
+    
+            <div class="food-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrZZYV9Eu13fxu8qXT98ovX6SrG3hGOtpqPw&s" alt="Rajma Chawal">
+                <h2><a href="https://www.youtube.com/shorts/6IvlsbZFjU4?feature=share">Rajma Chawal</a></h2>
+                <p>Calories: 235</p>
+                <p>Protein: 9.5g</p>
+                <p>Fats: 3.4g</p>
+                <p>Carbs: 43g
+                </p>
+            </div>
+    
+            <div class="food-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7JxAL_oMn0GhBrWH9duYERi-MkVI9LUsvrg&s" alt="Matar Paneer">
+                <h2><a href="https://www.youtube.com/shorts/ZaTZW1BWeh8?feature=share">Matar Paneer</a></h2>
+                <p>Calories: 272</p>
+                <p>Protein: 11g</p>
+                <p>Fats: 21g</p>
+                <p>Carbs: 11g
+                </p>
+            </div>
+    
+            <div class="food-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRufGBZ58lw9kEOhI6ddz7EwiWCqymVr2vPSQ&s" alt="Lemon Rice">
+                <h2><a href="https://www.youtube.com/shorts/Czk4e3XFiIo?feature=share">Lemon Rice</a></h2>
+                <p>Calories: 220</p>
+                <p>Protein: 5g</p>
+                <p>Fats: 4g</p>
+                <p>Carbs: 42g
+                </p>
+        
+            </div>
+    
+            <div class="food-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsCprVCqjGjV9D6RwBourKN-ER97dlufy9uA&s" alt="Masala Oats">
+                <h2><a href="https://www.youtube.com/shorts/iu5boYtxsPs?feature=share">Masala Oats</a></h2>
+                <p>Calories: 153</p>
+                <p>Protein: 3.9g</p>
+                <p>Fats: 3.5g</p>
+                <p>Carbs: 26.5g
+                </p>
+            </div>
+            <div class="food-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiFq5cJWmjSlzQuULPcmqDtPtN1uzrKNhG0w&s" alt="Lentil Soup">
+                <h2><a href="https://www.youtube.com/shorts/sdkkGAWlKSA?feature=share">Lentil Soup</a></h2>
+                <p>Calories: 139</p>
+                <p>Protein: 9.3g</p>
+                <p>Fats: 2.8g</p>
+                <p>Carbs: 20g
+                </p>
+            </div>
+        </main>
+    
+        
+    
+        
+
+        <h2 id ="v2"></h2>
+
+
+
+        <header>
+            <h1>Healthy Non-Veg  Food Choices</h1>
+        </header>
+        
+        <main>
+            <div class="food-item">
+                <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ03uLg1ltN082nOI6fa1vYkxVBhg1B61lZWw&s" alt="Chicken Tikka">
+                <h2><a href="https://www.youtube.com/shorts/CNY-KULxqmg?feature=share">Chicken Tikka</a></h2>
+                <p>Calories: 291</p>
+                <p>Protein: 33g</p>
+                <p>Fats: 12g</p>
+                <p>Carbs: 11g</p>
+            </div>
+            
+            <div class="food-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpGcCW88fzgKPVE7fFtzLgG7q1UzOZzUGzkg&s" alt="Pomfret Fish Fry">
+                <h2><a href="https://www.youtube.com/shorts/fXn9fuZPL5I?feature=share">Pomfret Fish Fry </a></h2>
+                <p>Calories: 148</p>
+                <p>Protein: 1g</p>
+                <p>Fats: 5g</p>
+                <p>Carbs: 23g</p>
+            </div>
+            
+            <div class="food-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO4xXTPqHPFI7YubNc9Wq9ekn14usUWN-Yvw&s" alt="Chicken Kebab">
+                <h2><a href="https://www.youtube.com/shorts/LO6LpWMnl60?feature=share">Chicken Kebab</a></h2>
+                <p>Calories: 332</p>
+                <p>Protein: 32g</p>
+                <p>Fats: 11g</p>
+                <p>Carbs: 23g </p>
+            </div>
+            
+            <div class="food-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoV8A3Wn6MI0OWKBCiyA5CCFiTPawr0Lpe8A&s" alt="Chicken Korma">
+                <h2><a href="https://www.youtube.com/shorts/WCLetSnB8aY?feature=share">Chicken Korma</a></h2>
+                <p>Calories: 461<p>
+                <p>Protein: 28g</p>
+                <p>Fats: 33g</p>
+                <p>arbs: 15g
+                </p>
+            </div>
+            
+            <div class="food-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYpR1wWYkDwUVCTOgwY5skak6eHuUoX2IdHw&s" alt="Chingri Macher Malaikari">
+                <h2><a href="https://youtu.be/lq5QbAadBzU">Chingri Macher Malaikari</a></h2>
+                <p>Calories: 136</p>
+                <p>Protein: 16.35g</p>
+                <p>Fats: 11.28g</p>
+                <p>Carbs: 9.92g
+                </p>
+            </div>
+    
+    
+            <div class="food-item">
+                <img src="https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/05/Chicken-Salad-5.jpg" alt="Chicken Salad">
+                <h2><a href="https://www.youtube.com/shorts/vn2-6JTGmI8?feature=share">Chicken Salad</a></h2>
+                <p>Calories: 254</p>
+                <p>Protein: 19g</p>
+                <p>Fats: 18g</p>
+                <p>Carbs: 3.3g
+                </p>
+            </div>
+    
+    
+            <div class="food-item">
+                <img src="https://static01.nyt.com/images/2020/03/04/dining/tr-egg-curry/merlin_169211805_227972c0-43d1-4f25-9643-9568331d8adb-square640.jpg" alt="Egg Curry">
+                <h2><a href="https://www.youtube.com/shorts/OKiA4DUpauA?feature=share">Egg Curry</a></h2>
+                <p>Calories: 163</p>
+                <p>Protein: 8g</p>
+                <p>Fats: 3g</p>
+                <p>Carbs: 8g
+                </p>
+            </div>
+    
+    
+            <div class="food-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWa4gaKJgSxDlmTMxnsAt9-8qZr4aNS0WlsQ&s" alt="Chicken Broth">
+                <h2><a href="https://www.youtube.com/shorts/P4p4_GSfVqc?feature=share">Chicken Broth</a></h2>
+                <p>Calories: 15</p>
+                <p>Protein: 1.6g</p>
+                <p>Fats: 0.5g</p>
+                <p>Carbs: 1.1g
+                </p>
+            </div>
+    
+    
+            <div class="food-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW7UYexyoKy3sprQedbjd-SnC12PXNDC30_w&s" alt="Chicken Curry">
+                <h2><a href="https://www.youtube.com/shorts/e5C_xKAqoqY?feature=share">Chicken Curry</a></h2>
+                <p>Calories: 243</p>
+                <p>Protein: 28g</p>
+                <p>Fats: 11g</p>
+                <p>Carbs: 7.5g
+                </p>
+            </div>
+    
+            <div class="food-item">
+                <img src="https://i.ytimg.com/vi/WROEDf34Vsg/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAOrcXy3Kr42WaSKa1XxxF89SGHHg" alt="Mutton Chaap">
+                <h2><a href="https://www.youtube.com/shorts/68cbMLxSqHI?feature=share">Mutton Chaap</a></h2>
+                <p>Calories: 493.9</p>
+                <p>Protein: 0.2g</p>
+                <p>Fats: 31.3g</p>
+                <p>Carbs: 3.3g
+                </p>
+            </div>
+    
+            <div class="food-item">
+                <img src="https://www.archanaskitchen.com//images/archanaskitchen/1-Author/Sai_Priya/Doi_Maach.jpg" alt="Doi Maach">
+                <h2><a href="https://www.youtube.com/shorts/0PYjPabeN_k?feature=share">Doi Maach</a></h2>
+                <p>Calories: 215</p>
+                <p>Protein: 13.17g</p>
+                <p>Fats: 13.19g</p>
+                <p>Carbs: 7.91g
+                </p>
+            </div>
+    
+            <div class="food-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSnrwj1_08fvni8zTUYH23RjJ5Nr3AuEvM7w&s" alt="Chicken Biryani">
+                <h2><a href="https://www.youtube.com/shorts/Qc3yCFj3WGM?feature=share">Chicken Biryani</a></h2>
+                <p>Calories: 292</p>
+                <p>Protein: 20g</p>
+                <p>Fats: 9.4g</p>
+                <p>Carbs: 31g
+                </p>
+        
+            </div>
+    
+            <div class="food-item">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDj-PuwqJQJPjpWLbePHxbw825A3euBBdfiu49tXF6hcmoQJf97Q8lOG8ZJAPdLTg2KIyodIiwYIH0divxk1snbYGEh-dSvyl2RvZeLmIHGADM2Ve_TgIr6WovtlbVqxV3eXEQN0bFS5U/s1600/Nandu+Rasam+%25282%2529.jpg" alt="Nandu Rasam">
+                <h2><a href="https://www.youtube.com/shorts/_76fIw-u1oY?feature=share">Nandu Rasam</a></h2>
+                <p>Calories: 75</p>
+                <p>Protein: 3.7g</p>
+                <p>Fats: 4g</p>
+                <p>Carbs: 5.7g
+                </p>
+            </div>
+            <div class="food-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyKtyTr9CINbiM3uBDnUyVABWPCNKR4qPtcw&s" alt="Chicken Donair">
+                <h2><a href="https://www.youtube.com/shorts/2dR6SzUwbpY?feature=share">Chicken Donair</a></h2>
+                <p>Calories: 466</p>
+                <p>Protein: 44g</p>
+                <p>Fats: 12g</p>
+                <p>Carbs: 44g
+                </p>
+            </div>
+        </main>
+        <br><br>
+    
+        <footer>
+            <p>&copy; 2024 Trackfit</p>
+        </footer>
+
+    
+</body>
+</html>

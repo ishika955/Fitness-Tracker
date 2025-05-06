@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness App - Heart Rate Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color:#76bdc7 ;
+           
+            background-image: url("https://img.freepik.com/premium-photo/3d-rendering-product-display-podium-pastel-background-with-sports-fitness-equipments_711568-8.jpg");
+            background-repeat: no-repeat;
+            background-size:cover ;
+  
+  }
+
+        h1 {
+            text-align: center;
+            color: #4e3f9e;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 8px;
+        }
+
+        th {
+            background-color:#39a0d4 ;
+            color: white;
+        }
+
+        td input {
+            width: 50px;
+            text-align: center;
+        }
+
+        
+    td:first-child {
+    color: #e6e6e6; 
+    font-weight: bold; 
+
+    }
+        button {
+            margin: 20px auto;
+            display: block;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #39a0d4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #372f7c;
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #fff8f8;
+        }
+    </style>
+</head>
+<body>
+    <h1>Heart Rate Monitoring</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Morning Heart Rate</th>
+                <th>Evening Heart Rate</th>
+            </tr>
+        </thead>
+        <tbody id="heartRateTable">
+            <!-- Rows will be inserted by JavaScript -->
+        </tbody>
+    </table>
+
+    <button onclick="calculateAverage()">Calculate Weekly Averages</button>
+
+    <div class="result" id="resultDisplay"> </div>
+
+    <script>
+        const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+        // Dynamically create rows for the table
+        const tableBody = document.getElementById('heartRateTable');
+        days.forEach(day => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${day}</td>
+                <td><input type="number" min="30" max="200" placeholder="BPM"></td>
+                <td><input type="number" min="30" max="200" placeholder="BPM"></td>
+            `;
+            tableBody.appendChild(row);
+        });
+
+        // Calculate weekly averages
+        function calculateAverage() {
+            const rows = tableBody.querySelectorAll('tr');
+            let morningTotal = 0, eveningTotal = 0, validMorning = 0, validEvening = 0;
+
+            rows.forEach(row => {
+                const morningInput = row.children[1].querySelector('input').value;
+                const eveningInput = row.children[2].querySelector('input').value;
+
+                if (morningInput) {
+                    morningTotal += parseInt(morningInput);
+                    validMorning++;
+                }
+                if (eveningInput) {
+                    eveningTotal += parseInt(eveningInput);
+                    validEvening++;
+                }
+            });
+
+            const morningAverage = validMorning > 0 ? (morningTotal / validMorning).toFixed(2) : "N/A";
+            const eveningAverage = validEvening > 0 ? (eveningTotal / validEvening).toFixed(2) : "N/A";
+
+            // Display results
+            const resultDisplay = document.getElementById('resultDisplay');
+            resultDisplay.innerHTML = `
+                <p><strong>Average Morning Heart Rate:</strong> ${morningAverage} BPM</p>
+                <p><strong>Average Evening Heart Rate:</strong> ${eveningAverage} BPM</p>
+            `;
+        }
+    </script>
+</body>
+</html>
