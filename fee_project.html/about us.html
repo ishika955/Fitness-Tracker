@@ -1,64 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-  <title>profile page</title>
+  <title>Profile Page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
   <style>
-  body {
-    font: 20px Montserrat, sans-serif;
-    line-height: 1.8;
-    color: #474e5d;
-  }
-  p {font-size: 16px;}
-  .margin {margin-bottom: 45px;}
-  .bg-1 { 
-    background-color: #3c547e; 
-    color: #ffffff;
-  }
-  .bg-2 { 
-    background-color: #474e5d; 
-    color: #ffffff;
-  }
-  .bg-3 { 
-    background-color: #2f2f2f; 
-    color:#ffffff ;
-  }
-  .bg-4 { 
-    background-color: #474e5d;
-    color: #fff;
-  }
-  .container-fluid {
-    padding-top: 70px;
-    padding-bottom: 70px;
-  }
-  .navbar {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border: 0;
-    border-radius: 0;
-    margin-bottom: 0;
-    font-size: 12px;
-    letter-spacing: 5px;
-  }
-  .navbar-nav  li a:hover {
-    color: #1abc9c !important;
-  }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.8;
+      margin: 0;
+      padding: 0;
+      color: #474e5d;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    h3 {
+      font-weight: 600;
+    }
+
+    .margin {
+      margin-bottom: 40px;
+    }
+
+    .container-fluid {
+      padding: 60px 50px;
+    }
+
+    .bg-1 {
+      background: linear-gradient(to right, #3c547e, #405b8c);
+      color: white;
+    }
+
+    .bg-2 {
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    .bg-3 {
+      background-color: #2f2f2f;
+      color: white;
+    }
+
+    .bg-4 {
+      background-color: #1f1f1f;
+      color: #fff;
+    }
+
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      background-color: #333;
+      z-index: 9999;
+      border: 0;
+      font-size: 13px;
+      letter-spacing: 4px;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      color: #fff !important;
+    }
+
+    .navbar-nav li a {
+      color: white !important;
+    }
+
+    .navbar-nav li a:hover {
+      color: #1abc9c !important;
+      background-color: transparent !important;
+    }
+
+    .img-responsive {
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .img-responsive:hover {
+      transform: scale(1.05);
+    }
+
+    .contact-info p {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    footer {
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .img-responsive {
+        margin-bottom: 20px;
+      }
+    }
   </style>
 </head>
 <body>
+<<<<<<< HEAD
+<!-- huyguy -->
 
+=======
 
+<!-- Navbar -->
+>>>>>>> b5fa14cbabc03d4f846ec944317ce979e2c94dd8
 <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
-     
-      <a class="navbar-brand" href="#"><b>TRACK<span>FIT</span></b></a>
+      <a class="navbar-brand" href="#"><b>TRACK<span style="color: #1abc9c;">FIT</span></b></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -69,52 +129,53 @@
   </div>
 </nav>
 
-
+<!-- Who Am I Section -->
 <div class="container-fluid bg-1 text-center">
   <h3 class="margin">Who Am I?</h3>
-  <img src="https://i0.wp.com/youchooseyourway.com/wp-content/uploads/2022/11/WELCOME_-removebg-preview.png?fit=300%2C300&ssl=1" class="img-responsive  margin" style="display:inline" alt="pic" width="350" height="350">
+  <img src="https://i0.wp.com/youchooseyourway.com/wp-content/uploads/2022/11/WELCOME_-removebg-preview.png?fit=300%2C300&ssl=1" class="img-responsive margin center-block" alt="pic" width="300" height="300">
   <h3>I'm your Fitness Trainer</h3>
 </div>
 
-
+<!-- What Am I Section -->
 <div class="container-fluid bg-2 text-center">
   <h3 class="margin">What Am I?</h3>
-  <p> <font size=4><b>Helping People's Fitness<br> Journey Succeed Through The<br> Power Of Technology.</b></font>
-    <br> At TRACKFIT, we believe that fitness is a journey, not a destination.<br>
+  <p><strong>Helping People's Fitness<br>Journey Succeed Through The<br>Power Of Technology.</strong></p>
+  <p>At TRACKFIT, we believe that fitness is a journey, not a destination.<br>
      Our mission is to empower individuals to take control of their health<br>
-      and well-being through innovative tracking solutions and community support.</p>
-  
+     and well-being through innovative tracking solutions and community support.</p>
 </div>
 
-
-<div class="container-fluid bg-3 text-center">    
-  <h3 class="margin">Where To Find Me?</h3><br>
+<!-- Contact Section -->
+<div class="container-fluid bg-3 text-center">
+  <h3 class="margin">Where To Find Me?</h3>
   <div class="row">
-    
-    <div class="col-sm-4"> 
-      <img src="https://png.pngtree.com/png-vector/20220419/ourmid/pngtree-symbolic-icon-of-email-envelope-with-vector-gradient-gold-interfaces-vector-png-image_30077760.jpg" class="img-responsive margin" style="height: 200px;"width="500px;" alt="Image">
+    <div class="col-sm-4 contact-info">
+      <img src="https://png.pngtree.com/png-vector/20220419/ourmid/pngtree-symbolic-icon-of-email-envelope-with-vector-gradient-gold-interfaces-vector-png-image_30077760.jpg" class="img-responsive center-block margin" style="height: 200px;" alt="Email Icon">
       <p>ishika1242.becse@chitkara.edu.in</p>
       <p>muskan1274.becse@chitkara.edu.in</p>
-      <p>nishtha1294.becse@chitkara.edu.in</p>
+      <p>lakshita1252.becse@chitkara.edu.in</p>
+      <p>ishika1243.becse@chitkara.edu.in</p>
     </div>
-    <div class="col-sm-4"> 
-      <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcReO_EAi6iycPQ7x-h2KUMMYHbH8Ee2iEH8EUaBAaKNWP_26lF8" class="img-responsive margin"  style="height: 200px;"width="500px;" alt="Image">
+    <div class="col-sm-4 contact-info">
+      <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcReO_EAi6iycPQ7x-h2KUMMYHbH8Ee2iEH8EUaBAaKNWP_26lF8" class="img-responsive center-block margin" style="height: 200px;" alt="Instagram Icon">
       <p>ishika_bedi55</p>
-      <p>muskan_gera</p>
-      <p>nishtha_sharma</p>
+      <p>muskangera411</p>
+      <p>lakshitasharma45</p>
+      <p>ishikasingla30</p>
     </div>
-    <div class="col-sm-4"> 
-      <img src="https://thumbs.dreamstime.com/b/phone-contact-remove-gold-icon-vector-illustration-golden-style-dark-background-178120197.jpg" class="img-responsive margin"  style="height: 200px;"width="500px;" alt="Image">
+    <div class="col-sm-4 contact-info">
+      <img src="https://thumbs.dreamstime.com/b/phone-contact-remove-gold-icon-vector-illustration-golden-style-dark-background-178120197.jpg" class="img-responsive center-block margin" style="height: 200px;" alt="Phone Icon">
       <p>Ishika :- +91-8685986823</p>
       <p>Muskan :- +91-7404213139</p>
-      <p>Nishtha :- +91-8544788623</p>
+      <p>Lakshita Sharma:- +91-6284725706</p>
+      <p>Ishika Singla:- +91-8146612331</p>
+    </div>
   </div>
 </div>
-</div>
 
-
+<!-- Footer -->
 <footer class="container-fluid bg-4 text-center">
-  <p>&copy; 2024 TrackFit. All rights reserved.</a></p> 
+  <p>&copy; 2024 TrackFit. All rights reserved.</p> 
 </footer>
 
 </body>

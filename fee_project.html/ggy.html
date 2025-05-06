@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Workout Tracker</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #f7f7f7;
+      color: #333;
+    }
+
+    nav {
+      background-color: #222;
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav button {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 10px 15px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    nav button:hover {
+      background: #444;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      position: relative;
+      animation: popin 0.3s ease;
+    }
+
+    @keyframes popin {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: #fefefe;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      margin-bottom: 15px;
+    }
+
+    input, button {
+      margin-top: 10px;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #aaa;
+    }
+
+    button {
+      background: #222;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <button onclick="openModal('homeModal')">Home</button>
+    <button onclick="openModal('historyModal')">Workout History</button>
+    <button onclick="openModal('goalsModal')">Streak Goals</button>
+    <button onclick="openModal('badgesModal')">Badges</button>
+    <button onclick="openModal('remindersModal')">Reminders</button>
+  </nav>
+
+  <!-- Modal Templates -->
+  <div class="modal" id="homeModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('homeModal')">&times;</span>
+      <h2>🏠 Streak Tracker</h2>
+      <div class="card">
+        <p>Your current streak: <strong id="streak">0</strong> days</p>
+        <button onclick="incrementStreak()">Mark Workout Done</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="historyModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('historyModal')">&times;</span>
+      <h2>📅 Workout History</h2>
+      <div class="card">
+        <p>(Add your workout log from localStorage here later)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="goalsModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('goalsModal')">&times;</span>
+      <h2>🎯 Streak Goals</h2>
+      <div class="card">
+        <input type="number" id="goalInput" placeholder="Enter goal days">
+        <button onclick="saveGoal()">Save Goal</button>
+        <p id="goalStatus"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="badgesModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('badgesModal')">&times;</span>
+      <h2>🏅 Badges</h2>
+      <div class="card">
+        <ul id="badgeList">
+          <li>🔥 3-Day Streak</li>
+          <li>💪 7-Day Streak</li>
+          <li>🏆 30-Day Streak</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="remindersModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('remindersModal')">&times;</span>
+      <h2>⏰ Reminders</h2>
+      <div class="card">
+        <input type="time" id="reminderTime" />
+        <button onclick="saveReminder()">Save Reminder</button>
+        <p id="reminderSet"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS Logic -->
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "flex";
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+
+    // Streak Logic
+    let streak = localStorage.getItem("streak") || 0;
+    document.getElementById("streak").textContent = streak;
+
+    function incrementStreak() {
+      streak++;
+      localStorage.setItem("streak", streak);
+      document.getElementById("streak").textContent = streak;
+      checkBadges();
+    }
+
+    // Badge Check
+    function checkBadges() {
+      const badgeList = document.getElementById("badgeList");
+      if (streak == 3) badgeList.innerHTML += "<li>✅ Unlocked: 3-Day Streak</li>";
+      if (streak == 7) badgeList.innerHTML += "<li>✅ Unlocked: 7-Day Streak</li>";
+      if (streak == 30) badgeList.innerHTML += "<li>✅ Unlocked: 30-Day Streak</li>";
+    }
+
+    // Goal Logic
+    function saveGoal() {
+      const goal = document.getElementById("goalInput").value;
+      localStorage.setItem("goal", goal);
+      document.getElementById("goalStatus").textContent = `Goal of ${goal} days saved!`;
+    }
+
+    // Reminder Logic
+    function saveReminder() {
+      const time = document.getElementById("reminderTime").value;
+      localStorage.setItem("reminderTime", time);
+      document.getElementById("reminderSet").textContent = `Reminder set for ${time}`;
+    }
+
+    // Load goal on start
+    const savedGoal = localStorage.getItem("goal");
+    if (savedGoal) {
+      document.getElementById("goalStatus").textContent = `Your saved goal: ${savedGoal} days`;
+    }
+
+    const savedReminder = localStorage.getItem("reminderTime");
+    if (savedReminder) {
+      document.getElementById("reminderSet").textContent = `Reminder set for ${savedReminder}`;
+    }
+  </script>
+
+</body>
+</html>
+
