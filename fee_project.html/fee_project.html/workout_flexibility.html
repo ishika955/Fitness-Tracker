@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>Exercise Guide</title>
+    <style>
+       body {
+    position: relative; 
+    background: linear-gradient(to bottom right, rgba(60, 85, 126, 0.8), rgba(0, 0, 0, 0.7));
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.navbar {
+    width: 100%;
+    background-color: #3c547e;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0; 
+    padding: 30px; 
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    border-radius: 50%;
+    margin-right: 20px;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+
+.card h1 {
+    font-size: 22px;
+    margin: 0;
+    color: #3c547e;
+}
+
+.card p {
+    margin: 5px 0;
+    color: #555;
+}
+
+a {
+    color: #ff4081;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #e91e63;
+}
+
+@media (max-width: 600px) {
+    .card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .card img {
+        margin-bottom: 15px;
+        width: 100px;
+        height: 100px;
+    }
+}
+
+#scrollTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    background-color: #3c547e;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#scrollTopBtn:hover {
+    background-color: #2e3e5c;
+    transform: scale(1.1);
+}
+.personal-touch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #d4af37, #f1c40f); /* Gold to yellow gradient for a shiny effect */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Soft, refined shadow for depth */
+    margin: 20px;
+    border: 3px solid #f39c12; /* Rich golden border with a refined look */
+    transition: all 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.personal-touch:hover {
+    background: linear-gradient(145deg, #f1c40f, #d4af37); /* Reverse the gradient on hover for shine effect */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25); /* Increase shadow on hover for a premium feel */
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 3px solid #f39c12; /* Gold border around the avatar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+}
+
+.intro h3 {
+    font-family: 'Georgia', serif;
+    font-size: 22px;
+    color: #fff; /* White text for contrast */
+    margin: 0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); /* Soft text shadow for a polished look */
+}
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="navbar">Exercise Guide</div>
+    <div class="personal-touch">
+        <img src="https://i0.wp.com/youchooseyourway.com/wp-content/uploads/2022/11/WELCOME_-removebg-preview.png?fit=300%2C300&ssl=1" alt="Ishika's Avatar" class="avatar">
+        <div class="intro">
+            <h3>💬 Hi! I’m Ishika, your guide through this flexibility journey!</h3>
+        </div>
+    </div>
+    
+
+    <div class="container">
+        <div class="card">
+            <img src="https://media.istockphoto.com/id/964785648/vector/illustrated-exercise-guide-by-healthy-woman-doing-lunges-workout-in-2-steps.jpg?s=612x612&w=0&k=20&c=aiyOizs_x3B3fI07LVuQ6thVMpRl_oAtbzJurVM56Jw=" alt="Dynamic Lunges">
+            <div>
+                <h1>1. Dynamic Lunges</h1>
+                <p>Repeat 3 times</p>
+                <p>50 counts per set</p>
+                <a href="https://www.youtube.com/watch?v=S4PGl2mbLGk">Tutorial</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://www.shutterstock.com/image-vector/woman-doing-tip-toe-pose-600nw-2333535149.jpg" alt="Stair Calf Stretch">
+            <div>
+                <h1>2. Stair Calf Stretch</h1>
+                <p>Repeat 3 times</p>
+                <p>30 counts per set</p>
+                <a href="https://www.youtube.com/watch?v=pU6Thh4ct7A">Tutorial</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://www.shutterstock.com/image-vector/pregnant-woman-practice-cat-cow-600nw-2327716531.jpg" alt="Cat Cow Stretch">
+            <div>
+                <h1>3. Cat Cow Stretch</h1>
+                <p>Repeat 3 times</p>
+                <p>50 counts per set</p>
+                <a href="https://www.youtube.com/watch?v=y39PrKY_4JM">Tutorial</a>
+            </div>
+        </div>
+<!-- ewdesded -->
+        <div class="card">
+            <img src="https://thumbs.dreamstime.com/b/woman-doing-salamba-bhujangasana-sphinx-pose-exercise-woman-doing-salamba-bhujangasana-sphinx-pose-exercise-flat-vector-240272945.jpg" alt="Sphinx Pose">
+            <div>
+                <h1>4. Sphinx Pose</h1>
+                <p>Repeat 3 times</p>
+                <p>50 counts per set</p>
+                <a href="https://www.youtube.com/watch?v=h8UyGkeqkoU">Tutorial</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPgJs-gA_QUHcsshuLvx3hPE3f-3C9Sno4Kw&s" alt="90-90 Stretch">
+            <div>
+                <h1>5. 90-90 Stretch</h1>
+                <p>Repeat 3 times</p>
+                <p>25 counts per set</p>
+                <a href="https://www.youtube.com/watch?v=t4Zz6-aG8Iw">Tutorial</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://thumbs.dreamstime.com/b/basic-rgb-221301062.jpg" alt="Knee to chest ">
+            <div>
+                <h1>6. Knee to chest </h1>
+                <p>Repeat 3 times</p>
+                <p>20 counts per set</p>
+                <a href="https://www.youtube.com/watch?v=o8gAyDUh2bs">Tutorial</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/019/486/867/small/woman-stretching-posture-for-aches-treatment-at-shoulder-arm-neck-and-back-flat-illustration-isolated-on-white-background-vector.jpg" alt="Wrist figure 8's">
+            <div>
+                <h1>7. Wrist figure 8's</h1>
+                <p>Repeat 3 times</p>
+                <p>Stay still for 1 min straight.</p>
+                <a href="https://www.youtube.com/watch?v=3cDbPR6h4QM">Tutorial</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://thumbs.dreamstime.com/b/man-doing-double-arm-front-raises-to-overhead-extension-man-doing-double-arm-front-raises-to-overhead-extension-flat-vector-281100712.jpg" alt="Shoulder Rolls">
+            <div>
+                <h1>8. Shoulder Rolls</h1>
+                <p>Repeat 3 times</p>
+                <p>30 counts per set</p>
+                <a href="https://www.youtube.com/watch?v=w8yCm_sFUo4">Tutorial</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://thumbs.dreamstime.com/b/basic-rgb-220571865.jpg" alt="Standing Hamstring Stretch">
+            <div>
+                <h1>9. Standing Hamstring Stretch</h1>
+                <p>Repeat 3 times</p>
+                <p>30 counts per set</p>
+                <a href="https://www.youtube.com/watch?v=LVY692zJK0A">Tutorial</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://static.vecteezy.com/system/resources/previews/006/417/671/non_2x/man-doing-overhead-triceps-stretch-exercise-flat-illustration-isolated-on-white-background-free-vector.jpg" alt=" Overhead Triceps Stretch">
+            <div>
+                <h1>10. Overhead Triceps Stretch </h1>
+                <p>Repeat 3 times</p>
+                <p>40 counts per set</p>
+                <a href="https://www.youtube.com/watch?v=qsyrvNY8uBA">Tutorial</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://static.vecteezy.com/system/resources/previews/005/477/884/non_2x/woman-doing-paschimottanasana-seated-forward-bend-exercise-flat-illustration-isolated-on-white-background-free-vector.jpg" alt=" Overhead Triceps Stretch">
+            <div>
+                <h1>11. Seated Forward Bend</h1>
+                <p>Repeat 3 times</p>
+                <p>30 seconds hold</p>
+                <a href="https://www.youtube.com/watch?v=qsyrvNY8uBA">Tutorial</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAPEBAPEg8QFRUWEBUVFxAPFRAXEBAQFxIWFxYWFhUYHSggGBolHhUVITEhJSkrLi4uFx8zRDMtNygtLisBCgoKDg0OGhAQGi8mICIvNy0tKy0tLS0rMDUvLS0tLy0tLTUtLS8tLS0tLS0tKzArLS0tNTUtLS0tLS0tNy8vLf/AABEIAOkA2AMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAABQEDBAYHAgj/xAA7EAACAQMCAwUFBQYHAQAAAAABAgADBBESIQUxQQYTIlFhBzJxgcFSYpGhsRQjQnLR8RUWM0OCkvDh/8QAGgEBAAMBAQEAAAAAAAAAAAAAAAIDBAEFBv/EACgRAAMAAgIBBAAGAwAAAAAAAAABAgMRBDESBSFBURQiM2FxkRMysf/aAAwDAQACEQMRAD8A7jERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAERKGAViYHELao58LDGPdORv8Zg07l6ZxqzjoTkGU1l8X7otnF5L2fv8AROxMe3ulfkd/I85kS1UmtoraaemIiJ04IiIAiIgCIiAIiIAiIgCIiAIiUMArEx7i7VOZ38hzkVUuXqHGcZ6A4EqvKp9i2MTr3+CdiYHD7aoh8TDGPdGTvM+Tl7W2iFJJ6TEREkREREAoy52MtrboOSr+Al2JzSGyNvLDHiT/AKj6TzZ3/wDC5/5f1kpI3iNmMFx8x5ym4c/mn+i+LVflv+yRBlZG8Ou+SN8j9JIiWRapbRVcOXplYiJMiIiIAiIgCIiAIiIAiIgFCZF3l+fdT/t/SeuI3fNFPxP0leHWgwHPyHlM906fjJfEqZ86FnYZ8T/gfrM026Hmi/gJclZbMKVorq6p7PKrgYE9REmQEREAREQBERAPLNjczW7nt5wpKpoPfUNWoKRklQx6FgNI/HaRftbp3tSzp0bRWPe11p1dGxFNsgZPRdWMnymp0PZZbC2CNUfv8f6qkikG+yKfIr0zzld5JnsnGOq6Oj3dEI2x8JGQR5SS4dc6l0k7j8xNW4fi0tqlJ9YpW7KKTOS5/Z2C+HPvEIxIyd9IEtf5jtaeGF1TI+62XX5DciUxNqtwm0/o0XUONW0mvs3qJo3AO36Vrk0KihEbAp1TsS3k45DPSbzNt46j2paMMZJv/V7KxESBMREQBERAERKGAVmFxG50rgcz+Qmpcf7frRuRQpqGRdqlUbkN5IORx1lP8x2tTLG6pgfebDn5HcCcz48sytS/c7gyYqp7pexO2lIM25wBuSfITHtu3nCnqCgl9Q1aioBJCkjoGI0n033kff4u7anTTWaVwzCqyEof2dQ3hzswDsAMjfSTNPr+yy2NsUWpU7/Ge9Yk0i32TT5aemeczY6nGtV2ack1ke56Oyqc7ys0b2SU72nZ1KN2GApV2p0teSTTXAOD1XVnB8pvM1GUREQBERAEREAREQChGZEXdgVOVGR5dRJieKjaQSegleSFS9yeO6l+xrhpkMdQx6HyxOfds+BrbsK1MYpucFPsPz29D+Ume1SXNvUe+o1n0swNSkx1IucKCFPTkPSapxnj1a7CippCruFQYGeWTmbPTePc2smOty+zJ6lyIqHjyTql0RZnU/Z32oNdRaVmzUVfA551EHQ/eH5icsl61uHpVEqo2HRgysOhH06fCe1yMCyxr5+DxePmeK9o+hpWRHZnjSXtutZefJ0+xUHMfUehkvPnqly9M+gmlS2hEROEhERAKGaN7RO1BoKbSi2KjL43HOmh6D7x/ITZO0vGksrdqzc/dRft1DyH1+AnDbq4eq71XOWdizE9SZv4XH/yV5V0jBzeR4LwntlqbN2N4GLhjWqDKIcBPtvz39B+c1mSnBuO1rQMKekqxyVcEjV5jHWejy4yVic4n7nncS8cZVWVex1NaZLAKM89h5Y/+TPtLAscsMDy6maR2VS5uaiX1as+lWJp0lJVDjKk6R05jzM6XSbUAR1E+Y/DTF+Le2uz6f8AE1ceSWk+j0oxKxEvKBERAEREAREQBERAEsXw/dv8Jflq5GUb+UyNdM7PaNcrWP7SrUCQA6spJGcDB6ec5v2k7LXFgQXw9MnArJnTnyYfwmdU4aw70ZI2BMkro0nRkqaGVgQVbBBHliS9P5LwL9mc9Q4yzv8AdI+fcc+ewyfQZxk+U9UaTOyoqlmY4CjmSek6JxejZ8OtycpTXX4TUY5qPuRvgkkDONjjB+M43xDjTs7d07opyMqWDMDz3G+P1nqz6lNTTS/g8qvTbmkm/wCTsvYG9s7S4bh/ehrl11uVOaasv+0Dy1AEn8fSdEE+RrK5ehUp1qR0vTcOjdAwOR8uh9CZ9U9nuKLe2tC6UYFWkr6fskjxL8jkfKeXVVT8q7PTmZlanokYiJwkJQysju0PFFsrWvdMMilSZ9P2iB4V+ZwPnANL7fXtnd3C8P70Lc001oWOKbM3+0Ty1EAH8PWc6rUmRmR1KspIKnmpHSafe3NSvUqVqp1PUcu7ebk5OPToPQSQ4fxl1de9d3UaRlmJZQOWCd8CbuHyXjfjXRh5nFWReU9/9J4jltzGRnqM4yPMSc7N9lri/JKYSmDg1n93PUKP4jNq4PRs+IW4OUqLr8RpN/pvsTvgEMRz2GdvjN8te5RFSnoVVGAq4AAHpJV6p5JqVpkJ9LctOntEDRsf2ZVoAghFVQQMZAUcxNhsRimvwkVxJh3h3G4B/LH0kvbDCKPuieNi/UpntZf05RdiImkzCIiAIiIAiIgCIiAJRhkESsQCI/wts81kZ2rqCxsbm6LDUlM6Btg1TsnPnuRtNqnK/b1xMpb21qM4qVS7Ng6cUwMLnzLMD/xMqWGEWvNb+Tj/ABLilxdMHr16lUjkXIwPgo2HyEwnbBUeZ+hM9SVtOz71rG7vxnFtUo7DkVc4cn4BlP4yxJIr3vsip3b2GcU72xq25O9CscDr3bjUPlnUPlOEzp3sHpXAu69RUPcNb6XqHZe9VwU0/aO7g45ZnTh3GJQSsATmvtz4p3VjTtwd61YZHXu6Y1H5Z0j5zpU4d7d6VwbuhUZD3C0NKVBuves5Lg/ZOyc+eIBzGeUbJYeRx+QP1nqSt32fejY2l+ScXNStgdFVGxTPzCsfwgGLw7ilxbMXoV6lJjzKHY/FTkN8xPonspUF9Y210G8T0hrG2O9Gz8uW4O3rPmudr9gvEy9vc2xBxTqh1bB04qA6lB5ZBUnH3hIVE12ic3U9M33/AAxs81+sllGNpWIjGo6F5HXYiIkyAiIgCIiAIiIAiIgCIiAJBccppVJpuiuunBRwGU5zzB2MnTIC8bNRj6/pM/IepL+Ot0a5S9nHC67HNroAH+09RBn0AOBNk4T2Ss7W1q2VOlmjV1d4lRixcONLAsd8Yknw6jpQeZ3/AKTLlmJNStkMrTp6NJu/Z/wqlpdbCid/49bjPTZiRJvgwVGCKqqunAVQAo5bADlJW5pa1K/+zISg+llPkf7yjLuciZdi1WNr5NglZQGVmsyiQfGVV2KMqsNIBVgCpznIIPOTZM1+u+pmPmf7TPyK1OjRx53WyKs/Z/wqrqZrCiOmE1oM/BSBJni3ZKzurWlZPSxRpadCU2KlAi6VAbnjH4yYtqWhQvp+cuy2FqUmU206bRz2t7N+F0GGLXWCNu9eowz12JwZs3A6SUmFNERF04CIoVRjyAkjxGjqQnqN5GWTYqJ8f1mfJuci+jTGqxP7J6IiazIIiIAiIgCIiAIiIAiIgCIiAW7h9Ks3kDIBFLEDqTJfij4pkeZA/wDfhMXhVHJLnpsPjMuVeVqTVifjDolVErAiajKUkFfJpqMPXP4ydkVxdMMD5j9JRyFudl/Ger0SNv7i/wAo/SXZatvcX+UfpLsunopfZauT4G/lP6SGsU1VFHrn8JM3PuN/Kf0kdwhPET5D9f7SjKt3KL8T1jpkqJWImgzlCJrrKVJHUH9JsUi+LUsEP57H4zPyJ2t/Ro49arX2SNB9Sq3mBLkw+FvmmPQkfnn6zMl0PcplNrVNCIiSIiIiAIiIAiIgCIiAJQys1Xtxx6vaIiUKLs9QN+9CkrSxjoBu2+3wkoh3XiiF2onyZLcSrIzCkHTWPEaeRrAI2OOfnM2zpaUA+Z+JnDqXA7+uzVFt7hmJJNQhgxY8yWbHnO2cJDihRFRcOKahl22YDcbS3PxZxNUq22V4OVWVOXOkjMEREoLykhO1HFKFslNqzldTELgEknG/KTc5r7XKh1WqYOArnO+MkqPpLcGKctqK6ZVny1ih3PaOg8Mu0rUadWmcoyAqfSZM072WXBayKHPgrOBnlpbD7fNmm5SOSPC3K+DuK/OFT+TE4ndpRo1KtQ4RVJY+mJHdl+KULlKjUXLYYBsggg425yI9qdwVsggB8dZASOirl9/mokR7I6h1XSYOCqHO+MgsPrLVx5eF5X2iquRSzLEumdJlYiZzSJYvKWtCPmPiJfmHxYOaFYU1y/dsFXbdtJwN48VXsxtz7ox+G1kVjSLprPiCZGsjG5A5yTE4TW4Hf0GFRre4VgQRUAYsGGMEMueWJ07sNx6vdo6V6Lq9ML+9IIWpnPQ8m2/OacnEWKE4raMuLlvLbVzpm0xETMahERAEREAREQBERAEpiViAUiViABERAEtvTVuag/EAy5EA8IgGwAHoMAT1KxAPDoGGCAfQjMpTpKvJQPgAJciDmikrEQdEpKxAKYgSsQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAERKFsQCsTHtbxKhqBc+CoUbO3iABOPTxCUub+lSzrcLim9Q5ztTTGtvlkQDJieFqA4II5Z+U8V7lKaNUZgFVSzMeQUDJMAvRPIcHkRyz8pZS8Q1GpA+JUVz5aWLAYPn4TAMiJ5LfCNY8xAPUSgMw7jitCnVWi9TDtjAw2kaiQupgNK5KsBkjODiAZsSKHaK1KF1d2GpVwlKuzsWUspVFUsykAkMAQQDvLrcYohnQmplE1ue6r6EXQHwz6dIbBB0k535QCQiYVLitJlR8uod9CipSrI7P5BHUNjrnGMAnlKU+LUWNXDMBSzrdqdVaQ0khsVGUK2MHOkmAZ0SPPGaAdKZchnCkArUGNQJUMSMIxwcK2Cccpe4fxCncKWp68A4y9OsgbrldajUPUZEAyoiIAiIgCIiAIiIAiIgCRXaPh7XNHu1WmzagwFViEBHInCtqxz0kYPpzkrPMA1S87Ku5qODRDu9Ul8EF1alTCKcDlqpg43x6y3c9lalbvWqJa6qtO7Ut4mNLvwmgqSmW0lT9n3s+k3CBANQqdlqjO7aaKlqJUaKlULQPcmn3aoEAZMknJxz90neXb3str75KdO2RHs2o5IJJcphfBo8ChstkHfyzvNplRANPuuy1aprANClqyRVpFzUpDuBT7hRpXNLPizkc/dB3mTR7P1RWp3AS2p6NA/ZqRc0CAamo+4PENYZTp2Ix1zNngQDW+J8CrV3rNigDVoBO8YualuwRgUp+EakYnc5U8+eRjDPZJ3Yuy265V9NFNRp0C9SgcIdI2IpPk4G78pt5gQCL4dwgU6RoscKLl6qCkzKEQ1jURNsbDIBXlzHKW+JWtzUuKZFO3aiulsPVqJUNUE4ZgKTBgvQZG+/lJmU/pANXPB7p6b97RtTVZw3eLcVwFxTdAU00gU0BsBd85bcS63A6xdie6YGiVctUrZvWNBaf75AulB4QdSljsOU2SIBqFfs1csEPeIGHeaR3tciz7xkIak2M1SNJ2YKDq6DIN677O1qhrYFJUZw37OtWv3dwRW7wmodP7oncYUNzPPlNpiAa1Z9mnDUXqVNRTLuA9QipUV2NFWzzWmGADHxHSvlM7s9w6pbipq0KpK6KFJ6lSnSCrgkM4B8W3hxgY67mS0qIBWIiAIiIAiIgH//Z" alt=" Overhead Triceps Stretch">
+            <div>
+                <h1> 12. Standing Side Stretch</h1>
+                <p>Repeat 2 times per side</p>
+                <p>20 seconds hold</p>
+                <a href="https://www.youtube.com/watch?v=qsyrvNY8uBA">Tutorial</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="data:image/jpeg;base64,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" alt=" Overhead Triceps Stretch">
+            <div>
+                <h1>13. Butterfly Stretch </h1>
+                <p>Repeat 3 times</p>
+                <p>30 seconds hold</p>
+                <a href="https://www.youtube.com/watch?v=qsyrvNY8uBA">Tutorial</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="data:image/jpeg;base64,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" alt=" Overhead Triceps Stretch">
+            <div>
+                <h1>14. Cat-Cow Stretch</h1>
+                <p>Repeat 10 times</p>
+                <p>Hold each position 3 seconds</p>
+                <a href="https://www.youtube.com/watch?v=qsyrvNY8uBA">Tutorial</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0ODw0PEBINEREQFQ8PDxARDw8ODRIPFhEWFhYSExMkHSggGBolGxMTITEhJjUrLi4uFx8zOD8sNygtMCsBCgoKDg0OGxAQGy0lHyUvNy0tKzAtMy0vLy0tLS0rKy0tLSstLSsrLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAOEA4QMBEQACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABAUDBgcCAQj/xAA8EAACAgEBBAYHBQYHAAAAAAAAAQIDEQQFEiExBhNBUWFxByIygZGhsTNCUnLBFCNiguHxQ0SSorLC8P/EABoBAQADAQEBAAAAAAAAAAAAAAADBAUCAQb/xAAuEQEAAgEDAgQFBAIDAAAAAAAAAQIDBBExEiEFIjJBE1FhccEUobHhQtEVI1L/2gAMAwEAAhEDEQA/AO4gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAqelO0LtNpbJ0KLueIVb7xXGT5zl4RipS/lObW6Y3dVr1Ts5btDT9IqoPVy1V8sLrJwhqLE4Lm26sKGF2pEEZomdlicMxG716POmWuntOmi+6y6rVKyG7NqShZGEpxnHuzuNYXD1sk/VvKv0bQ7MdOQAAAAAAAAAAAAAAAAAAAAAAAAAAAACv21XGVcd5J4nGUc8UpLOGQaidqJ9PG91S0mmnxT4Nd6KK+5n0V6PvSdIdDp+sjYqoTubSa3V1FqUX48YvPiX8duruoZa9PZ3ImQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGLU0qyLj8H3M4yU6q7O6X6LbtetUlJwxxTw391eXeZtomJ2lpVmJjeHOOgdFsekuoU096L1s5ZeX1cn6j8sSrx4NF/HttGyhl5nd20mQgAAAAAAAAAAAAAAAAAAAAAAAAAAAPkpYTb5LieTOxHdrer23b11dVbipT/eSWE1CmL4yfi3iK8W32EFL2mtsk8R2j6z/XMrF8dYtXHHq5n6R/fEf0+ybbbfFviylM7zvK9EbRtCr6PTTnqNVFR6ydt1as3Yuapi4wUE8ey+qi8d5d1M2xTSke1Y/fv+VHTRXLF7z72n9u34X9e0rVzxJeWCGuovHKe2mpPHZY6fVws5PD/C+f8AUtUy1vwqXxWpykEiMAAAAAAAAAAAAAAAAAAAAAAAAMM9VXFuLeGuPFM4nJWJ2mXcY7TG8Q17pJt1U02WPO5HhGPKU5vkv/eJHirbVZYxU4/CTJaulxTlvz+fk0Po90lhC7U2apy3rtz14xclFRz6m7zUePDHcbGu8NtbHSmHivt8/r92RofEq0yXvn/y9/x9lzrumekhF9Vv2z+6tyVcM/xNpcPLJn4fB89refaI++/8L+bxjBWv/XvM/bb+ULoHtVevppv1m5W1t/ez7cfPhn3vuLPjOlntmrxttP4/0r+DarnDae/Mfn/bdaNmytTnnk+HrOK9xiUw2vG8Nu+etJ2l7lo7Y84yflx+h5OK8exGak+77DUW19sl4SXD5nsZL0eTjx3ZI7StX4X5o6jUXczpqJNe1Y/ei14p5RNXUx7whtpp9pZp7QqSzlvwSeTuc9IhxGC8zwafaFdjaWV+bCT8u8UzVsXw2qlkyEAAAAAAAAAAAAAAAAAAFdDZrcpSslvZb5Zy+7PcVvgb23tKz8fau1Y2UfpB2HbqNHGOnjmVVitda9qcdyUXjvkt7PxNPw+9MN+/aJjZl6+l81O3eYlyGSabTTTWU01hprmmuw+gYL4B6hOUWpQbUk04OPCSkuWPHJ5aImJi3D2JmJia8+z9B6KpwrrjJ5lGMVJ8FmWOL97yfLbRHavD6jeZ725ZwDAxumD5xi/cjnprPs66rR7vEtHU/ux93A5nFSfZ1GW8e6NdsuL9l7vh7SIraaJ47Ja6m0c92B7Gy1vTWO1KCz8XyOY0vfvLudV27Qtoxwkl2cEW4jZTfQAAAAAAAAAAAAAAAAAAAAahtXYGildbKVFLcm5ye7huUuLb8ctkF9bqMdumt52T49Fp8leq1I3QX0Y2e/8AAj7p2L/sI8T1Uf5/w9/4zS/+GTR9GNnq2pqlZU4Neva+Kkny3jqviWptPTNufpDi3humrHVFePrLeSVEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUm1PtX5L6FDUetoaf0IpAmeqpbsovuafwZ1WdpiXlo3iYbGajKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAObdIPSJs+jW6nTWLUJ0yVcrI1xnU5bqbSxLe4NtPhzRVy4bWtvC1izVrXaUdekbY2PtrF4fs2oz/AMSL9PdN+oxoer9KGzYfZw1Vv5a4wj73KSfyPY013M6mvs6X0c2rDW6PS6qCajdXGe62m4yxiUW+9NNe4uxHZSnlZHrwAAAAAAAAAAAAAAAAAAAAAAAAAADBrdXCmu22bxCqE7ZvsUIxcm/gmB+TNVqpX2W3T9u6dl0+317JucvnJgYgAHePQVr+s2bbQ/8AL32Rj+SxKzP+qVgHRwPLfPAHitvIGUAAAAAAAAAAAAAAAAAAAAAAB5nyA17pto7tRs/VUUutTuiqs2OShuSkt9PCb4x3l7zm94rG8uqUm07Q4dqehG1KpNvTucVwUqpwsTXHjjO8ny7DiM1J93c4bx7Ka3ZOsrd07NPfCFag3Odcq0nOTUU8+KS8ufeSRMTwjmJjll0OxdXqJQ6ui+becuNcnBcUuM/Z7XxbPJtWOZexW08Q6/6Jej+r0EdZLUbkXf8As7VUZb7g4dZlyfLL3+xvkeVyRaez2+Oa8uiviztw8doH3w72AXYAT4gZIyT5AegAAAAAAAAAAAAAAAAAAAAQNr8K14yX0ZX1M+VY00edUFFeT9Bp96m1/jbx/Ly+eS3ipvjn6qmW+2SPogFVbWOx1xn5L6ss6bmVXVcQtMFxTMAMIBhAMAEgPoAAAAAAAAAAAAAAAAAAAAIG2F6kfzL6Mr6n0rGm9ank8Jsor7YdJVuVwj3JJ+fb8zUpXprEMq9uq0ypNTXuznHubx5c0Z2SvTaYaOO3VWJTNj+1PyX1J9NzKDVcQtS4pgAAAAAAAAAAAAAAAAAAAAAAAAAAQ9rL935NEGo9CfT+tTwjmUV3ygv9yKVY3tC9edqzLZDUZSo2vXicZfiXzX90UtTXa0Su6a3lmDZD9eS74/qhpp80mqjywty6pAAAAAAAAAAAAAAAAAAAAAAAAAAAQtrSxXjvaX6/oQaifIn08edW6JZsr8/6lXF64W83olfmizUHa8fUT7mvoyvqY8qxpp86v0M8WQ88fHgVsM7XhazRvSV8aLNAAAAAAAAAAAAAAAAAAAAAAAAAAArdsvhDzf6FXVcQtaXmUTZ6zbD3v5MgwxveE+edscr00WcibUX7p+DT+ZDqI8ibTz54U9bxKL7mn8yjXmF+3plsZqMoAAAAAAAAAAAAAAAAAAAAAAAAAACu2yuEPN/Qq6niFrS8yxbHrzKUu5YXm/7HOmr3mXWqt2iFsXFNh1cN6E14P4nGSN6zDvHO1olQ184+a+pnV5hpW4lshqMoAAAAAAAAAAAAAAAAAAAAAAAAAACv1uv06shp5WVddJb0anKPWOPHio+5/BnXwrWr1bdvm5+LWtunfulaWCUeCSy88Fg4iIjh3MzPLMevACshooqa9rg12rHPyII09YndPOotMbLMnQAAAAAAAAAAAAAAAAAAAAAAAAAAibU2jTpKZ3XS3YQWX3t9kYrtb7jvHjtktFa8uMmSuOs2s4ZtPat2o1M9VJuNkpKccP7PdxuKL8El8D6PHirTH8P2fO5Mtr3655/h1D0e9ILddXqVc4uyucX6q3YquUcJJecJ/Extbp64rR08S2NFqLZYnq5bcUl18k0k2+CXFvwA4yumGqjqNZbGy1wuVypi5txqbf7qcYvKTWFw7cs3v0VJpWsx3jbf6/OGDGsvF7Wie077fT5OtbF1n7RptNe8J2112NLkpSim18cmJlp0XmvyltYr9dIt84TThIAAAAAAAAAAAAAAAAAAAAAAAAGu9L+jD2kqV10qlU5Pd3OshJywstZXFYfHxZa02p+BMztvuq6nTfG277bKnQ+jTRwad1t9v8K3aYPzxmXzJ7+JZJ9MRH7oK+HY49UzP7Np2XsfS6RNUVQr3sKTSzOWOW9J8XzfMpZMt8k73nddx4aY/TGyeRpGuekDWWU7Pv6tS3rN2puKb3YS9qXh6uVnxRa0dK2zR1KusvNcU7fZxmimdjUa4zm+SjCMpy+CN+1oiN5lgxEzxDuHRDSXUaHS1XLFkYvejzcU5NqL8UmkfO6m9b5bWrw+h01bVxVrblckCcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfMAfQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//Z" alt=" Overhead Triceps Stretch">
+            <div>
+                <h1>15. Chest Opener Stretch</h1>
+                <p>Repeat 3 times</p>
+                <p>30 seconds hold</p>
+                <a href="https://www.youtube.com/watch?v=qsyrvNY8uBA">Tutorial</a>
+            </div>
+        </div>
+      
+            <button id="scrollTopBtn" title="Go to top">↑</button>
+
+        
+    </div>
+    
+    <script>
+        // Show button when user scrolls down 100px
+        window.onscroll = function() {
+            const btn = document.getElementById("scrollTopBtn");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+    
+        
+        document.getElementById("scrollTopBtn").onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
+    
+
+
+
+</body>
+</html>

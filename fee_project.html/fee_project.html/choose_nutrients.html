@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Recipes</title>
+    
+    <style>
+        body {
+            background-image: url("https://img.freepik.com/premium-photo/flat-photo-sports-equipment-dumbbells-table-tennis-rackets-measuring-tape-trainers-water-bottle-fruit-protein-bars-sports-training-background_102209-258.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white; 
+        }
+
+        .container {
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            flex-wrap: wrap; 
+            padding: 20px;
+            gap: 20px; 
+            height: 100vh; 
+        }
+
+        .category {
+            background: rgba(0, 0, 0, 0.7); 
+            border-radius: 10px; 
+            overflow: hidden;
+            width: 300px; 
+            text-align: center; 
+            transition: transform 0.3s; 
+        }
+
+        .category:hover {
+            transform: scale(1.05); 
+        }
+
+        .category-image {
+            width: 100%; 
+            height: auto; 
+        }
+
+        .category-info {
+            padding: 15px; 
+        }
+
+        h3 {
+            margin: 10px 0; 
+        }
+
+        p {
+            margin: 5px 0;
+            font-size: 14px; 
+        }
+
+        a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold; 
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        
+        @media (max-width: 600px) {
+            .category {
+                width: 90%; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="category" id="salads">
+            <img src="https://www.foodandwine.com/thmb/bzp7zgHD9zI1gxPVpifxGQCjUBQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Salad-with-Crispy-Chickpeas-FT-RECIPE0520-2000-eca02ddb3d6c4ac39a5debe013330822.jpg" alt="Salads Image" class="category-image">
+            <div class="category-info">
+                <h3><a href="food.html">Salads</a></h3>
+                
+            </div>
+        </div>
+
+        <div class="category" id="veg-food">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwGAUSG0G3O32yXQr2xYoXsDbIfSDtIuIOX-8fgrQcbZfZ0yIf6XU4VHBGyGKxv8c_WSQ&usqp=CAU" alt="Veg Food Image" class="category-image">
+            <div class="category-info">
+                <h3><a href="food.html#v1">Veg Food</a></h3>
+                
+            </div>
+        </div>
+
+        <div class="category" id="meat-dishes">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoO1TcpsYjFRBgaIfggmiglbvLIZZnXjJeRQ&s" alt="Meat Dishes Image" class="category-image">
+            <div class="category-info">
+                <h3><a href="food.html#v2">Non-Veg Dishes</a></h3>
+                
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
